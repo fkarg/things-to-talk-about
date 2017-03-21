@@ -1,23 +1,41 @@
-\documentclass[12pt,compress,ngerman,utf8,t]{beamer}
+\documentclass[13pt,compress,ngerman,utf8,t]{beamer}
 \usepackage{etex}
 \usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+
 
 \usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
 
+
 \date{\today}
 \institute{University of Freiburg}
+\titlegraphic{\hspace{9cm} \includegraphics[height=2cm]{Logo-Uni-Freiburg.png}}
+\graphicspath{ {./template/} }
+%\titlegraphic{
+%    \begin{figure}[b!]
+%    \end{figure} }
 
 \title{Denk-Paradigmen}
 \author{Felix Karg}
+\subject{Mathecamp}
+
+
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Inhalt}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
 
 
 \begin{document}
 
 \maketitle
 
-\begin{frame}{Übersicht}
-    \tableofcontents
-\end{frame}
+\frame{\frametitle{Inhalt}\tableofcontents}
+
 
 \section{Was sind das überhaupt?}
 
@@ -30,6 +48,7 @@
     \begin{itemize}
         \item "Nichts"
         \item Karma
+        \item Religion
         \item Rationalität
         \item Stoismus
         \item Weitere ...
