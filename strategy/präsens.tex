@@ -14,19 +14,18 @@
 \titlegraphic{\hspace{9cm} \includegraphics[height=2cm]{template/Logo-Uni-Freiburg.png}}
 \graphicspath{ {./template/} {./strategy/} }
 
-\title{Strategie}
+\title{Cached Thought: Strategie}
 \author{Felix Karg}
 \subject{Mathecamp}
 
-\newif\iffinal
-\finaltrue
-% \finalfalse
+\newif\ifonline
+\onlinetrue
+% \onlinefalse
 
 \AtBeginSection[]
 {
     \begin{frame}{Inhalt}
         \begin{multicols}{2}
-            \small
             \tableofcontents[currentsection]
         \end{multicols}
         \clearpage
@@ -35,10 +34,8 @@
 
 \AtBeginSubsection[]
 {
-    \small
     \begin{frame}{Inhalt}
         \begin{multicols}{2}
-            \small
             \tableofcontents[currentsection,currentsubsection]
         \end{multicols}
         \clearpage
@@ -54,6 +51,8 @@
 % multicols from:
 % https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Inhalt}
     \small
     \begin{multicols}{2}
@@ -64,38 +63,39 @@
 \end{frame}
 
 
-% \input{begin.tex}
-
-% now %
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{begin.tex} % DONE
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Analyse}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%CACHED THOUGHTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{cached.tex} % DONE
 
-\begin{frame}{Analyse I - Finden versteckter Stärken}
-    % Mehrere Optionen:
-    %   Wal-Mart (?)
-    %   David & Goliath (?) (Melly fragen!)
-    %   Dosen-Abfüll-Dings (?!)
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%NICHT-STRATEGIE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ANALYSIS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{analysis.tex} % IN PROGRESS
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ECHTE STRATEGIE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Echte Strategie}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Kernelemente echter Strategie}
-\subsection{Sich einen Vorteil verschaffen}
-\subsection{Fokus}
-\subsection{Design}
-\subsection{Einen Vorteil verwenden}
+\input{real_kernel.tex} % IN PROGRESS
+% \input{real_gaining_advantage.tex} % TODO
+% \input{real_focus.tex} % TODO
+% \input{real_design.tex} % TODO
+% \input{real_using_advantage.tex} % TODO
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEISPIELE FÜR GUTE STRATEGIE%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{examples_good.tex} % IN PROGRESS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%CITES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \input{cites.tex} % IN PROGRESS
 
 
 
-% \input{end.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \end{document}

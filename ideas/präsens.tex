@@ -1,0 +1,102 @@
+\documentclass[12pt,compress,ngerman,utf8,t]{beamer}
+\usepackage{etex}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+
+
+\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+
+
+\date{\today}
+\institute{University of Freiburg}
+\titlegraphic{\hspace{9cm} \includegraphics[height=2cm]{template/Logo-Uni-Freiburg.png}}
+\graphicspath{ {./template/} {./strategy/} }
+
+\title{Strategie}
+\author{Felix Karg}
+\subject{Mathecamp}
+
+\newif\ifonline
+\onlinetrue
+% \onlinefalse
+
+
+\AtBeginSection[]
+{
+    \begin{frame}{Inhalt}
+        \begin{multicols}{2}
+            \small
+            \tableofcontents[currentsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \begin{frame}{Inhalt}
+        \begin{multicols}{2}
+            \small
+            \tableofcontents[currentsection,currentsubsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+% \vspace{0.1cm}
+
+\begin{document}
+
+\maketitle
+
+% multicols from:
+% https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
+
+\begin{frame}{Inhalt}
+    \small
+    \begin{multicols}{2}
+        \small
+        \tableofcontents[hidesubsections]
+    \end{multicols}
+    \clearpage
+\end{frame}
+
+
+\input{begin.tex}
+
+
+% now %
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analyse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Analyse I - Finden versteckter Stärken}
+    % Mehrere Optionen:
+    %   Wal-Mart (?)
+    %   David & Goliath (?) (Melly fragen!)
+    %   Dosen-Abfüll-Dings (?!)
+\end{frame}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Echte Strategie}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Kernelemente echter Strategie}
+\subsection{Sich einen Vorteil verschaffen}
+\subsection{Fokus}
+\subsection{Design}
+\subsection{Einen Vorteil verwenden}
+
+
+
+\input{end.tex}
+
+
+\end{document}
