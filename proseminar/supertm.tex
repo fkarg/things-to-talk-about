@@ -1,0 +1,116 @@
+\section{Superturingmaschinen}
+
+\begin{frame}[c]{Superturingmaschinen: Intro}
+    \Large
+    Eigentlich eine Normale Turingmaschine. \\
+    \pause
+    Wir Rechnen nur auf einem Ordinalen Zahlenstrahl.
+    % Dadurch ergeben sich jetzt erstmal schon so ein paar Fragen,
+    % also nach dem Zustand zum Zeitpunkt $\omega$ oder ähnliches.
+\end{frame}
+
+\subsection{Grenzverhalten}
+
+\begin{frame}[c]{Grenzverhalten - Unklarheiten}
+    \Large
+    Was nicht so ganz Klar ist:
+    \begin{itemize}
+            \pause
+        \item In Welchem Zustand sind wir?
+            \pause
+        \item Wie sieht das Band aus?
+            \pause
+        \item Was bedeuted das?
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Grenzverhalten - Möglichkeiten}
+    \Large
+    Zwei Möglichkeiten:
+    \begin{itemize}
+            \pause
+        \item Wir halten.
+            \pause
+            Das ist einfach :)
+            \pause
+        \item Wir halten nicht.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Grenzverhalten - Erklärung}
+    \Large
+    \pause
+    Es ist echt verdammt schwer GIFs in PDFs zu bekommen ... \\
+    \pause
+    Demotime. \\
+    % Zeige vier Varianten: Immer 1 -> Klar, 1
+    % Immer 0 -> Klar, 0
+    % Endlich oft 1, unendlich oft 0: immernoch 0
+    % Unendlich oft 1, unendlich oft 0: ist 1
+    \pause
+    { \small
+    (Hier werde ich anhand von externen Bildern erklären, wie das Grenzverhalten für Zellen zu verstehen ist)
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Grenzverhalten - Beispiel}
+    \code{Prüfe im Start- und Limeszustand, ob die aktuelle Zelle eine Eins enthält.
+    \begin{itemize}
+        \item Wenn Ja, dann halte.
+        \item Wenn nein, dann lass die Zelle aufleuchten und laufe ohne Unterlass nach rechts.
+    \end{itemize}}
+    \pause
+    Scheint sich zu wiederholen, hält aber nach Schritt $\omega^2$.
+
+    \bigskip
+    \pause
+    Eine Superturingmaschine wiederholt sich genau dann, wenn
+    \begin{itemize}
+        \item die Aufnahmen zu zwei Limesordinalzahlen gleich sind und
+        \item zwischen diesen Zeiten keine Zellen, die Null waren zu eins werden.
+    \end{itemize}
+\end{frame}
+
+
+\subsection{Fähigkeiten}
+
+\begin{frame}[c]{Fähigkeiten}
+    \large
+    \begin{itemize}
+        \item Alles was Normale Turingmaschinen können
+            \pause
+        \item Das Klassische Halteproblem lösen
+            \pause
+        \item Gewisse Zahlentheorethische Aussagen entscheiden
+            \pause
+        \item Turingmaschinen mit gewissen Fähigkeiten finden
+            \pause
+        \item Funktionen mit gewissen Eigenschaften finden
+            \pause
+        \item Die Menge der Wohlordnungen entscheiden
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Fähigkeiten II}
+    \Large
+    Was Superturingmaschinen dennoch nicht können:
+    \begin{itemize}
+        \item Beliebige 0/1-Folgen auf das Band schreiben
+            \pause
+        \item Ihr eigenes Halteproblem lösen
+            \pause
+        \item Beliebig komplexe Aussagen entscheiden
+            \pause
+        \item Kaffe kochen
+            \pause
+        \item ...
+    \end{itemize}
+\end{frame}
+
+
+
+

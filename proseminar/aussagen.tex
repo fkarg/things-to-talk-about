@@ -1,0 +1,41 @@
+\section{Aussagentypen}
+
+
+
+\begin{frame}[c]{Aussagentypen - Einführung}
+    \large
+    Eine $\Sigma_1$-Aussage ist eine Aussage der Form: \\
+    \[ \text{"`Es gibt $n \in \mathbb{N}$ mit $\heartsuit$."',}\]
+        \pause
+    wobei in der Teilaussage $\heartsuit$ nur noch {\em beschränkte Quantifikatoren} vorkommen dürfen, also Formeln wie:
+    \pause
+    \[ \text{"`Für alle Zahlen m kleiner .. gilt ..."'} \]
+    oder
+    \[ \text{"`Es gibt eine Zahl m kleiner .. mit ..."'} \]
+
+\end{frame}
+
+
+\begin{frame}[c]{Aussagentypen}
+    \Large
+    $n_1, .., n_k, m_1, .., m_k \in \mathbb{N}$;
+    \only<5-> {$f_1, .., f_k : \mathbb{N} \rightarrow \mathbb{N}$} \\
+    $M = \{ n \in \mathbb{N}\ |\ \phi(n)\}$ \\
+
+    Aussagen der Form:
+    \begin{itemize}
+            \pause
+        \item $\phi = \exists n_1 .. \exists n_k: \heartsuit$ ( $\Sigma_1$ \only<7> { = NP})
+            \pause
+        \item $\phi = \exists n_1 .. \exists n_k: \forall m_1 .. \forall m_k: \heartsuit$ ( $\Sigma_2$ )
+            \pause
+        \item $\phi = \forall n_1 .. \forall n_k: \heartsuit$ ( $\Pi_1$ \only<7> { = co-NP})
+            \pause
+        \item $\phi = \exists f_1 .. \exists f_k: \heartsuit$ ( $\Sigma_1^1$ )
+            \pause
+        \item $\phi = \forall f_1 .. \forall f_k: \heartsuit$ ( $\Pi_1^1$ )
+    \end{itemize}
+
+\end{frame}
+
+
