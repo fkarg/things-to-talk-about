@@ -4,7 +4,7 @@
     \Large
     Eigentlich eine Normale Turingmaschine. \\
     \pause
-    Wir Rechnen nur auf einem Ordinalen Zahlenstrahl.
+    Wir haben als Zeitschritte Ordinalzahlen.
     % Dadurch ergeben sich jetzt erstmal schon so ein paar Fragen,
     % also nach dem Zustand zum Zeitpunkt $\omega$ oder ähnliches.
 \end{frame}
@@ -13,14 +13,14 @@
 
 \begin{frame}[c]{Grenzverhalten - Unklarheiten}
     \Large
-    Was nicht so ganz Klar ist:
+    Offene Fragen sind:
     \begin{itemize}
             \pause
-        \item In Welchem Zustand sind wir?
+        \item In welchem Zustand sind wir?
             \pause
         \item Wie sieht das Band aus?
             \pause
-        \item Was bedeuted das?
+        \item Was bedeutet das?
     \end{itemize}
 \end{frame}
 
@@ -44,23 +44,25 @@
     \pause
     Es ist echt verdammt schwer GIFs in PDFs zu bekommen ... \\
     \pause
-    Demotime. \\
+    Demotime.
     % Zeige vier Varianten: Immer 1 -> Klar, 1
     % Immer 0 -> Klar, 0
     % Endlich oft 1, unendlich oft 0: immernoch 0
     % Unendlich oft 1, unendlich oft 0: ist 1
-    \pause
-    { \small
-    (Hier werde ich anhand von externen Bildern erklären, wie das Grenzverhalten für Zellen zu verstehen ist)
-    }
+    % \pause
+    % { \small
+    % (Hier werde ich anhand von externen Bildern erklären, wie das Grenzverhalten für Zellen zu verstehen ist)
+    % }
 \end{frame}
 
 
 \begin{frame}[c]{Grenzverhalten - Beispiel}
+    \normalsize
+%    Turingmaschine:
     \code{Prüfe im Start- und Limeszustand, ob die aktuelle Zelle eine Eins enthält.
     \begin{itemize}
         \item Wenn Ja, dann halte.
-        \item Wenn nein, dann lass die Zelle aufleuchten und laufe ohne Unterlass nach rechts.
+        \item Wenn nein, dann lass die Zelle aufleuchten und laufe ohne zu halten nach rechts.
     \end{itemize}}
     \pause
     Scheint sich zu wiederholen, hält aber nach Schritt $\omega^2$.
@@ -90,7 +92,7 @@
             \pause
         \item Funktionen mit gewissen Eigenschaften finden
             \pause
-        \item Die Menge der Wohlordnungen entscheiden
+        \item Die Klasse der Wohlordnungen entscheiden
     \end{itemize}
 \end{frame}
 

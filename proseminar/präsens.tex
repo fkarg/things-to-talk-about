@@ -70,27 +70,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Inhalt}
-    \large
+    \Large
     \begin{multicols}{2}
         \tableofcontents[hidesubsections]
     \end{multicols}
-    \clearpage
+    % \clearpage
 \end{frame}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{begin.tex} % PROGRESS
+\input{begin.tex}
 % % \input{computability.tex}
 \input{turingmachine.tex}
-\input{aussagen.tex}
+% \input{aussagen.tex}
 \input{ordinals.tex}
-% \input{kardinals.tex}
+% % \input{kardinals.tex}
 \input{supertm.tex}
+\input{wellorder.tex}
 \input{clockability.tex}
-\input{halting.tex}
+% \input{halting.tex}
+\input{ausblick.tex}
 \input{sources.tex}
+
+
+% conter deklarieren
+\newcounter{official}
+\setcounter{official}{\value{page}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

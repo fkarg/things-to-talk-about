@@ -1,8 +1,125 @@
-\section{Stempelbare Ordinalzahlen}
+% \section{Stempelbare Ordinalzahlen}
+\section{Stempelbarkeit}
 
-\subsection{Stempelbare Ordinalzahlen - Einführung}
 
-% Lemmas ...
+\begin{frame}[standout]
+    \huge
+    Können wir zu jeder Natürlichen Zahl halten?
+    % Ja, einfach n Zustände.
+\end{frame}
+
+
+\begin{frame}[standout]
+    \huge
+    Können wir zu jeder Ordinalen Zahl halten?
+    % Betrachten wir doch einfach mal an welchen Zahlen wir wirklich halten können.
+\end{frame}
+
+
+
+% \subsection{Stempelbare Ordinalzahlen - Einführung}
+\subsection{Einführung}
+
+\begin{frame}[c]{Stempelbare Ordinalzahlen}
+    \pause
+    \code{Lese das Band.
+    \begin{itemize}
+        \item Bei einer 1, halte.
+        \item Bei einer 0, schreibe eine 1 und gehe ohne anzuhalten nach rechts.
+    \end{itemize}
+    }
+    \pause
+    $\rightarrow$ Wir halten im Schritt $\omega$. \\ \pause
+    \small
+    (wir haben bereits gesehen dass wir im Schritt $\omega^2$ halten können.)
+\end{frame}
+
+\begin{frame}[c]{Erkenntnisse}
+    \Large
+    \begin{itemize}
+        \item Alle Ordinalzahlen bis $\omega^2$ sind Stempelbar.
+            \pause
+        \item Ist $\alpha$ Stempelbar, so auch $\alpha + \beta$; $\beta \leq \omega^2$.
+            \pause
+        \item Sind $\alpha$ und $\beta$ Stempelbar, so auch $\alpha + \beta$ \pause und $\alpha * \beta$.
+    \end{itemize}
+    \pause
+    Sind das nicht bereits alle?
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[c]{Speed-Up Lemma}
+    \Large
+    Wenn $\alpha + n$ Stempelbar ist, so auch $\alpha$.
+    % Andersrum klar, aber eigentlich interessant aus einem anderen Grund
+    % Kurzfassung: Erkennt Bandinhalt für $\alpha$, setzt gleichzeitig flag.
+\end{frame}
+
+
 
 \subsection{Lücken-Theoreme}
+
+
+\begin{frame}[c]{Lücken-Existenz-Theorem}
+    \Large
+    Es gibt nicht-Stempelbare Lücken in den Ordinalzahlen. Um genau zu sein ist
+    die erste Lücke genau $\omega$ groß. \\
+    \pause
+
+    Beweis: \pause \\
+    Alle Turingmaschinen Simulieren und halten, sobald kein anderes gehalten hat.
+\end{frame}
+
+
+\begin{frame}[c]{Alle Turingmaschinen}
+    \Large
+    \alt<1,3>{Alle Turingmaschinen}{\underline{\bf Alle Turingmaschinen}} Simulieren und halten, \\
+    sobald kein anderes \only<-2>{gehalten}\only<3>{\underline{\bf gehalten}} hat.
+    \newline \newline \newline
+    Hat es Bedeutung, davon zu sprechen?
+    % Zwei dinge die erstmal komisch sind
+    % Alle Turingmaschinen -> Annahme: Ja ist möglich, können alle aufschreiben und dementsprechend simulieren
+    % gehalten -> starke Annahme: keine Simulierte hält. Ist berechtigt, da es weniger Ordinalzahlen gibt als mögliche TM.
+\end{frame}
+
+
+\begin{frame}[c]{Große-Lücken-Theorem}
+    \Large
+    Die Lücken werden Groß. Für jede Stempelbare Ordinalzahl gibt es mindestens
+    eine genausogroße Lücke.
+    \newline
+    \newline
+    \pause
+    Beweis.
+    % Zähle durch alle Ordinalzahlen, zähle $\alpha$ am rand mit solange keine
+    % hält, wenn alpha durch ist: Lücke gefunden, andernfalls setze \alpha
+    % zurück und fange von vorne an. Muss existieren, sonst sind wir irgendwann
+    % nach den 'stempelbaren Ordinalzahlen' und können anhalten sobald wir
+    % \alpha abgezählt haben.
+\end{frame}
+
+
+\begin{frame}[c]{Viele-Lücken-Theorem}
+    \Large
+    Es gibt für jede schreibbare Zahl $\alpha$ mindestens $\alpha$ viele
+    mindestens $\alpha$ große Lücken in den stempelbaren Ordinalzahlen.
+    % Beweis folgt.
+\end{frame}
+
+
+\begin{frame}[c]{Viele-Lücken-Theorem}
+    \Large
+    Um genau zu sein: ist $\alpha$ Stempelbar oder Schreibbar, ist die Anzahl
+    der Lücken mit der Größe mindestens $\alpha$ weder Stempelbar noch
+    Schreibbar.
+    % Beweis:
+    % Wir zählen die Lücken der Größe \alpha und clocken damit \beta.
+    % Irgendwann sind wir durch, und damit also hinter den stempelbaren
+    % Ordinalzahlen, wenn wir jetzt halten haben wir einen Widerspruch, also
+    % kann \beta weder stempelbar noch schreibbar sein.
+\end{frame}
+
+
+
 
