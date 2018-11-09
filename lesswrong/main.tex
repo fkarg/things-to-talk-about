@@ -1,4 +1,4 @@
-\documentclass[12pt,compress,ngerman,utf8,t]{beamer}
+\documentclass[18pt,compress,ngerman,utf8,t]{beamer}
 \usepackage{etex}
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
@@ -10,16 +10,15 @@
 
 
 \date{\today}
-\institute{Student at the University of Freiburg}
-\titlegraphic{\vspace{4cm} \hspace{9cm} \includegraphics[height=2cm]{template/Logo-Uni-Freiburg.png}}
+\institute{Student of Rationality}
 \graphicspath{ {./template/} {./lesswrong/graphics/} }
+% \titlegraphic{\vspace{4cm} \hspace{9cm} \includegraphics[height=2cm]{template/Logo-LessWrong.png}}
 
 \title{How to be less wrong}
 \author{Felix Karg}
 
-\newif\ifonline
-\onlinefalse
-% \onlinefalse
+\newif\ifEnglish
+\Englishfalse
 
 \AtBeginSection[]
 {
@@ -79,15 +78,25 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \input{begin.tex}
+\input{introduction.tex}
+\input{predictably_wrong.tex}
+
+% \input{occam.tex}
+
+
+
+%%%%%%%%%% END %%%%%%%%%%
+% \input{cites.tex}
+
+
+% generally don't forget: after 20min of talk, 5min short recap + exercise.
 
 
 
 
-
-% conter deklarieren
-\newcounter{official}
-\setcounter{official}{\value{page}}
+% conter deklarieren funktioniert so:
+% \newcounter{official}
+% \setcounter{official}{\value{page}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
