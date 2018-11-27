@@ -1,4 +1,4 @@
-\documentclass[12pt,compress,ngerman,utf8,t]{beamer}
+\documentclass[12pt,compress,ngerman,utf8,t,usenames,dvipsnames]{beamer}
 \usepackage{etex}
 \usepackage[ngerman]{babel}
 \usepackage{graphicx}
@@ -14,7 +14,7 @@
 \date{\today}
 \institute{University of Freiburg}
 \titlegraphic{\vspace{4cm} \hspace{9cm} \includegraphics[height=2cm]{template/Logo-Uni-Freiburg.png}}
-\graphicspath{ {./template/} {./proseminar/} }
+\graphicspath{ {./template/} {./proseminar/} {./proseminar/images/} }
 
 \title{A Simple Protocol for the Inference of RNA Global Pairwise Alignments}
 \author{Felix Karg}
@@ -26,7 +26,7 @@
 \AtBeginSection[]
 {
     \large
-    \begin{frame}{Inhalt}
+    \begin{frame}{Content}
         \begin{multicols}{2}
             \tableofcontents[currentsection]
         \end{multicols}
@@ -37,7 +37,7 @@
 \AtBeginSubsection[]
 {
     \large
-    \begin{frame}{Inhalt}
+    \begin{frame}{Content}
         \begin{multicols}{2}
             \tableofcontents[currentsection,currentsubsection]
         \end{multicols}
@@ -69,10 +69,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Inhalt}
-    \Large
+\begin{frame}{Content}
+    \large
     \begin{multicols}{2}
-        \tableofcontents[hidesubsections]
+%        \tableofcontents[hidesubsections]
+        \tableofcontents[]
     \end{multicols}
     % \clearpage
 \end{frame}
@@ -86,11 +87,14 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{begin}
-\input{localseq}
-\input{globalseq}
-% \input{phylogeny}
-\input{sources}
+\input{begin.tex}
+\input{needle.tex}
+\input{algorithms.tex}
+\input{sources.tex}
+
+
+% \section{Handout}
+% \section{Quiz!!!}
 
 
 % conter deklarieren

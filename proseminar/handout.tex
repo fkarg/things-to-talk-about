@@ -1,0 +1,59 @@
+\documentclass{scrartcl}
+% \usepackage{german} % including this twice is causing build fails !!
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amssymb} % what does it do?
+\usepackage{graphicx} % I can't do that yet
+\usepackage{fancyhdr} % what does it do?
+\usepackage{lastpage} % what does it do?
+\setlength{\parskip}{\medskipamount} % thats reasonable
+\setlength{\parindent}{0pt} % whatever that does
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fusszeilen %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\lhead{
+    \begin{tabular}{ll}
+        Felix Karg \\
+    \end{tabular}
+}
+\chead{Bioinformatics Handout}
+\rhead{
+    \begin{tabular}{rr}
+        \today{} \\
+        Page \thepage{} of \pageref{LastPage}
+    \end{tabular}
+}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Anfang des Dokuments %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{A Simple Protocol for the Inference of RNA Global Pairwise Alignments}
+
+
+
+
+
+
+Secondary structures are usually similiar in similiar regions
+
+
+\subsection*{SPS}
+Is called the Sum of Pairs Score, Similiarity is: \\
+1 - (edit distance / unaligned length of shorter sequence)
+
+\subsection*{W
+
+
+
+
+\end{document}
+
+

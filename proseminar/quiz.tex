@@ -1,0 +1,75 @@
+\documentclass{scrartcl}
+% \usepackage{german} % including this twice is causing build fails !!
+\usepackage[utf8]{inputenc}
+\usepackage[german]{babel}
+\usepackage{amssymb} % what does it do?
+\usepackage{graphicx} % I can't do that yet
+\usepackage{fancyhdr} % what does it do?
+\usepackage{lastpage} % what does it do?
+\setlength{\parskip}{\medskipamount} % thats reasonable
+\setlength{\parindent}{0pt} % whatever that does
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Kopf- und Fusszeilen %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\lhead{
+    \begin{tabular}{ll}
+        Felix Karg \\
+    \end{tabular}
+}
+\chead{Bioinformatics Quiz}
+\rhead{
+    \begin{tabular}{rr}
+        \today{} \\
+        Page \thepage{} of \pageref{LastPage}
+    \end{tabular}
+}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Anfang des Dokuments %
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\section*{A Simple Protocol for the Inference of RNA Global Pairwise Alignments}
+
+\vspace{0.5cm}
+
+\subsection*{What are the three categories of alignment algorithms?}
+\begin{itemize}
+\item 
+\item
+\item
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Of what type is the following alignment?}
+% https://tex.stackexchange.com/questions/24766/long-underscore-in-latex
+\includegraphics[width=\textwidth, clip = true, trim = 0mm 0mm 0mm 26mm]{proseminar/images/rna_comparison_glocal}
+It's \underline{\hspace{4cm}} alignment.
+
+
+\vspace{0.5cm}
+
+\subsection*{What does SPS stand for?}
+\begin{itemize}
+\item 
+\end{itemize}
+
+\vspace{0.5cm}
+
+\subsection*{Is the sequence Identity transitive?}
+\hspace{2cm} $\Box$ YES \hspace{1cm} $\Box$ NO
+
+\vspace{1cm}
+
+\subsection*{What is one of the best alignments for the sequence GATTACA?}
+
+\end{document}
+
+
