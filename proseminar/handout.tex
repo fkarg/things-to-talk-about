@@ -42,14 +42,67 @@
 
 
 
-Secondary structures are usually similiar in similiar regions
+Secondary structures are usually similiar in functionally similiar regions
 
 
 \subsection*{SPS}
 Is called the Sum of Pairs Score, Similiarity is: \\
 1 - (edit distance / unaligned length of shorter sequence)
 
-\subsection*{W
+\subsection*{Sequence Identity}
+The identity is the number of identical nucleotides divided by the shorter sequence length
+
+
+\subsection*{needle}
+
+needle is an implementation of the sequence based Needleman-Wunsch algorithm.
+
+\includegraphics[width=0.7\textwidth]{proseminar/images/Needleman-Wunsch_pairwise_sequence_alignment}
+
+\newpage
+
+
+\subsection*{Sequence Alignment}
+
+There's three categories:
+\begin{itemize}
+\item local
+\item global 
+\item glocal
+\end{itemize}
+
+Local is comparing (local) parts which are pretty similiar to begin with.
+
+Global is just comparing two RNA strands, complete.
+
+Glocal is roughly everything else, having restrictions (beginning/end) when aligning.
+
+
+\subsection*{LocARNA}
+
+Is a folding and aligning sequence algorithm.
+
+First a base pair probability matrix is being created using RNAfold.
+
+Then this is used as a guide for optimal alignment.
+
+
+\subsection*{Tree-based Sequence Alignments}
+
+\begin{itemize}
+\item gardenia
+\item RNA StrAT
+\item RNAdistance
+\item RNAforester
+\end{itemize}
+
+These are also extensively using the secondary structure.
+
+
+\subsection*{Comparison}
+
+\includegraphics[width=0.9\textwidth]{proseminar/images/predicted} \\
+\includegraphics[width=0.9\textwidth]{proseminar/images/curated}
 
 
 
