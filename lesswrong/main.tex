@@ -23,22 +23,18 @@
 
 \AtBeginSection[]
 {
-    \large
+    \Large
     \begin{frame}{Inhalt}
-        \begin{multicols}{2}
-            \tableofcontents[currentsection]
-        \end{multicols}
+        \tableofcontents[currentsection]
         \clearpage
     \end{frame}
 }
 
 \AtBeginSubsection[]
 {
-    \large
+    \Large
     \begin{frame}{Inhalt}
-        \begin{multicols}{2}
-            \tableofcontents[currentsection,currentsubsection]
-        \end{multicols}
+        \tableofcontents[currentsection,currentsubsection]
         \clearpage
     \end{frame}
 }
@@ -69,26 +65,26 @@
 
 \begin{frame}{Inhalt}
     \Large
-    \begin{multicols}{2}
-        \tableofcontents[hidesubsections]
-    \end{multicols}
-    % \clearpage
+    \tableofcontents[]
 \end{frame}
 
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \input{lesswrong/introduction2.tex}
-\input{introduction2.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING
+% % \input{introduction.tex}
 
-% \input{introduction.tex}
+% \input{introduction2.tex} % actual introduction, ~85%
+% \input{decisions.tex}     % few slides with a lot of information to talk about
 
-% \input{predictably_wrong.tex}
 
-% \input{occam.tex}
+% % % \input{predictably_wrong.tex}     % still exists, won't be used.
 
-% \input{test.tex}
+% \input{bayes.tex}     % not existent yet
+% \input{altruism.tex}  % not existent yet
+% \input{occam.tex}     % in progress ~85%
+% \input{fastslow.tex}  % not existent yet
+% \input{critical.tex}  % not existent yet
 
 
 %%%%%%%%%% END %%%%%%%%%%
