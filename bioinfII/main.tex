@@ -1,0 +1,100 @@
+\documentclass[12pt,compress,ngerman,utf8,t,usenames,dvipsnames]{beamer}
+\usepackage{etex}
+\usepackage[ngerman]{babel}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+% \usepackage{animate}
+% \usepackage{media9}
+
+
+\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+
+
+\date{\today}
+\institute{University of Freiburg}
+\titlegraphic{\vspace{4cm} \hspace{9cm} \includegraphics[height=2cm]{template/Logo-Uni-Freiburg.png}}
+\graphicspath{ {./template/} {./bioinfII/} {./bioinfII/images/} }
+
+\title{A Simple Protocol for the Inference of RNA Global Pairwise Alignments}
+\author{Felix Karg}
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+
+\AtBeginSection[]
+{
+    \large
+    \begin{frame}{Content}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \large
+    \begin{frame}{Content}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection,currentsubsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+% \vspace{0.1cm}
+
+
+
+\newcommand{\code}[1]{
+    \begin{center}
+    \setlength{\fboxrule}{1pt}
+    \setlength{\fboxsep}{8pt}
+        {\fbox{\parbox{0.81\textwidth}{#1}}}
+   \end{center}
+}
+
+
+
+
+\begin{document}
+
+\maketitle
+
+% multicols from:
+% https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Content}
+    \large
+    \begin{multicols}{2}
+%        \tableofcontents[hidesubsections]
+        \tableofcontents[]
+    \end{multicols}
+    % \clearpage
+\end{frame}
+
+
+% Topics:
+% 
+% Recap: Sequence Similarity / Identity (short: needleman)
+% Somewhat: Tree-based alignment
+% In-Depth: Sankoff Algorithm (LocARNA)
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{begin.tex}
+\input{tree.tex}
+\input{sankoff.tex}
+\input{locarna.tex}
+% \input{sources.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}
