@@ -12,8 +12,10 @@
     \newline
     \newline
     % trim = l b r t
-    \only<2>{\includegraphics[width=0.47\textwidth, clip=true, trim = 0mm 0mm 230mm 0mm]{tree_sequences}}
-    \only<3>{\includegraphics[width=\textwidth]{tree_sequences}}
+    \begin{overprint}
+    \only<2>{\centering\includegraphics[width=0.47\textwidth, clip=true, trim = 0mm 0mm 230mm 0mm]{tree_sequences}}
+    \only<3>{\centering\includegraphics[width=\textwidth]{tree_sequences}}
+    \end{overprint}
 \end{frame}
 
 
@@ -79,5 +81,12 @@
     \onslide<1>\centering\includegraphics[width=0.9\textwidth]{predicted}
     \onslide<2>\centering\includegraphics[width=0.9\textwidth]{curated}
     \end{overprint}
+\end{frame}
+
+
+\begin{frame}[c]{Tree-based Alignment}
+    \Large
+    \pause
+    Basically a structure-using edit distance.
 \end{frame}
 
