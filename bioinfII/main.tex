@@ -4,8 +4,12 @@
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
 \usepackage{multicol}
-% \usepackage{animate}
-% \usepackage{media9}
+\usepackage{advdate}
+
+
+% Increasing date:
+% https://tex.stackexchange.com/questions/188736/advancing-today-by-x-days
+\AdvanceDate
 
 
 \usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
@@ -87,11 +91,18 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \input{begin.tex}
-% \input{tree.tex}
-% \input{sankoff.tex}
+
+
+\begin{frame}[standout]
+    Calm down.
+\end{frame}
+
+\input{begin.tex}
+\input{tree.tex}
+\input{sankoff.tex}
 \input{locarna.tex}
-% \input{sources.tex}
+\input{end.tex}
+\input{sources.tex}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
