@@ -1,0 +1,15 @@
+Stuff/Concepts I want to include at some point:
+
+- Amortisation (in detail)
+- Strategy is Long-Term-Planning
+- Finite games vs infinite games
+- English version
+- Strategic Thought patterns (how to learn more from failure)
+    (how can I avoid this systematic class of failures)
+- Direct Consequences.
+- My own design(s).
+- Responsibility - or rather another talk?
+- Discipline - or rather another talk?
+
+
+
