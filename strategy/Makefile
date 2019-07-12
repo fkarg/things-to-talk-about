@@ -1,6 +1,8 @@
 
 all:
 
+clean:
+
 # Latex Makefile using latexmk
 # Modified by Dogukan Cagatay <dcagatay@gmail.com>
 # Modified by Philipp Jund
