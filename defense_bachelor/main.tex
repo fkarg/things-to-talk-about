@@ -1,0 +1,39 @@
+\documentclass[12pt,compress,ngerman,utf8,t,usenames,dvipsnames]{beamer}
+\usepackage[ngerman]{babel}
+
+
+\title{Template for Presentations}
+\author{Felix Karg}
+
+
+\graphicspath{ {../template/} {../template_tex/} } % add further graphics paths here
+
+
+\input{./setup}
+% \input{setup}
+
+
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Sources}
+% \bibliographystyle{plainnat}
+\bibliographystyle{ieeetr}
+\bibliography{references.bib}
+\end{frame}
+
+
+\end{document}
