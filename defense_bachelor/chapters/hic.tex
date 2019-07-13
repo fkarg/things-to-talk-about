@@ -2,8 +2,19 @@
 
 \begin{frame}[c]{High-Throughput 3C (Hi-C)}
     \normalsize
-    \includegraphics[scale=2.4, trim=0 40 0 6, clip]{f1000research-4-7903-g0000} \\
-    Image adapted from \cite{wingett2015hicup}.
+    \only<1,3>{\includegraphics[scale=2.4, trim=0 40 0 6, clip]{f1000research-4-7903-g0000} \\
+    Image adapted from \cite{wingett2015hicup}.}
+    \only<2>{\includegraphics[scale=1.5, trim=0 0 82 130,clip]{HiCMatricesModels} \\
+    Image adapted from \cite{rao20143d}.}
+    % Biases for each step:
+    %
+    % - Some regions do easier biotin labeling than others
+    % - PCR artifacts are included
+    % - Sequencing itself has multiple biases
+    % - Where to map multiple/unclear reads ?
+    % - differing chromatin states
+    % - more ...
+
 \end{frame}
 
 \begin{frame}[c]% {Chromosome Conformation Technologies}
@@ -16,5 +27,11 @@
 % Make introduction of Hi-C with focus to potential biases
 %  
 
+\begin{frame}[c]{HiCExplorer}
+    \normalsize
+    \pause
+    \includegraphics[scale=2.5,trim=37 0 0 45,clip]{HiCExplorer} \\
+    Image adapted from \cite{wolff2018galaxy}.
+\end{frame}
 
 

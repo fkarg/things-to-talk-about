@@ -1,3 +1,70 @@
 \section{ICE}
 
+\begin{frame}[c]{Iterative Correction and Eigenvector decomposition}
+    \Large
+    Algorithm as described in \cite{imakaev2012iterative}.
+\end{frame}
+
+
+\begin{frame}[c]{Iterative Correction and Eigenvector decomposition}
+    \Large
+    \begin{itemize}% [<+(1)->]
+        \item<2-> $O_{ij}$: raw data
+        \item<6-> $S_i$: sum of row $i$ of $W_{ij}$
+        \item<5-> $B_i, B_j$: cumulative biases
+        \item<3-> $T_{ij}$: relative contact probabilities
+        \item<4-> $W_{ij}$: working copy of $O_{ij}$, becoming $T_{ij}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Iterative Correction and Eigenvector decomposition}
+    \Large
+    Goal: Obtain $B$ and $T_{ij}$. \\ \pause Do this by explicitly solving:
+    \begin{equation} \label{eq:1}
+    O_{ij} = B_i B_j T_{ij}
+    \end{equation}
+    \begin{equation} \label{eq:2}
+    \sum^N_{i=1, |i-j|>1} T_{ij} = 1
+    \end{equation}
+\end{frame}
+
+
+\begin{frame}[c]{Iterative Correction and Eigenvector decomposition}
+    \begin{equation}
+    \forall_j\sum^N_{i=1}T_{ij} = 1
+    \end{equation}
+    \begin{equation}
+        \forall_i\sum^N_{j=1}T_{ij} = 1
+    \end{equation}
+\end{frame}
+
+\begin{frame}[c]{Iterative Correction and Eigenvector decomposition}
+    \Large
+    Each iteration, solve:
+    \pause
+    \onslide<2->{
+    \begin{equation}\label{eq:3}
+        S_i = \sum_j W_{ij}
+    \end{equation}
+    \begin{equation}\label{eq:4}
+        \Delta B_i = S_i / mean(S)
+    \end{equation}
+    }
+    \vspace*{-\baselineskip}
+    \onslide<3>{
+    \begin{equation}\label{eq:5}
+        W_{ij} = W_{ij} / \Delta B_i \Delta B_j
+    \end{equation}
+    \begin{equation}\label{eq:6}
+        B_i = B_i \cdot \Delta B_i
+    \end{equation}
+    }
+\end{frame}
+
 % Introduce the ICE algorithms based on graphics / Formulas
+
+
+
+
+
+
