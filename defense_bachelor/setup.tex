@@ -4,11 +4,19 @@
 \usepackage[export]{adjustbox}
 \usepackage{multicol}
 
+\usepackage{verbatim}
+\usepackage{verbatimbox}
+\usepackage{tikz}
+
+\usepackage{minted}
+\usemintedstyle{pastie}
+
 
 \usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
 
 
-\date{\today}
+% \date{\today}
+\date{17. Juli 2019}
 
 
 \institute{University of Freiburg}
@@ -19,9 +27,9 @@
 {
     \large
     \begin{frame}{Content}
-%        \begin{multicols}{2}
+%         \begin{multicols}{2}
             \tableofcontents[currentsection]
-%        \end{multicols}
+%         \end{multicols}
         \clearpage
     \end{frame}
 }
@@ -58,14 +66,33 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Content}
-    \large
-%    \begin{multicols}{2}
-%        \tableofcontents[hidesubsections]
-        \tableofcontents[]
-%    \end{multicols}
-    % \clearpage
-\end{frame}
+% \begin{frame}{Content}
+%     \large
+% %     \begin{multicols}{2}
+% %         \tableofcontents[hidesubsections]
+%         \tableofcontents[]
+% %     \end{multicols}
+%     % \clearpage
+% \end{frame}
 
 
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+
+\newcommand{\tikzmark}[2]{
+    \tikz[overlay,remember picture,baseline]
+    \node[anchor=base] (#1) {$#2$};
+}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
 
