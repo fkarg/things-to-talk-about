@@ -11,8 +11,8 @@
     \begin{itemize}[<+(1)->]
         \item $O_{ij}$: raw data
         \item $T_{ij}$: relative contact probabilities
-        \item $W_{ij}$: working copy of $O_{ij}$, becoming $T_{ij}$
-        \item $S_i$: sum of row $i$ of $W_{ij}$
+        % \item $W_{ij}$: working copy of $O_{ij}$, becoming $T_{ij}$
+        % \item $S_i$: sum of row $i$ of $W_{ij}$
         \item $B_i, B_j$: cumulative biases
     \end{itemize}
 \end{frame}
@@ -91,28 +91,29 @@
     \includegraphics[scale=0.5, trim=50 45 50 30,clip]{c_50kb}
 \end{frame}
 
-\begin{frame}[c]{ICE as described in Imakaev et al. 2012 \cite{imakaev2012iterative}}
-    \Large
-    Each iteration, compute:
-    \pause
-    \onslide<2->{
-    \begin{equation}\label{eq:3}
-        S_i = \sum_j W_{ij}
-    \end{equation}
-    \begin{equation}\label{eq:4}
-        \Delta B_i = S_i / mean(S)
-    \end{equation}
-    }
-    \vspace*{-\baselineskip}
-    \onslide<3>{
-    \begin{equation}\label{eq:5}
-        W_{ij} = W_{ij} / \Delta B_i \Delta B_j
-    \end{equation}
-    \begin{equation}\label{eq:6}
-        B_i = B_i \cdot \Delta B_i
-    \end{equation}
-    }
-\end{frame}
+
+% \begin{frame}[c]{ICE as described in Imakaev et al. 2012 \cite{imakaev2012iterative}}
+%     \Large
+%     Each iteration, compute:
+%     \pause
+%     \onslide<2->{
+%     \begin{equation}\label{eq:3}
+%         S_i = \sum_j W_{ij}
+%     \end{equation}
+%     \begin{equation}\label{eq:4}
+%         \Delta B_i = S_i / mean(S)
+%     \end{equation}
+%     }
+%     \vspace*{-\baselineskip}
+%     \onslide<3>{
+%     \begin{equation}\label{eq:5}
+%         W_{ij} = W_{ij} / \Delta B_i \Delta B_j
+%     \end{equation}
+%     \begin{equation}\label{eq:6}
+%         B_i = B_i \cdot \Delta B_i
+%     \end{equation}
+%     }
+% \end{frame}
 
 % Introduce the ICE algorithms based on graphics / Formulas
 

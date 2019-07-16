@@ -2,9 +2,68 @@
 \section{Integration of Rust in Python}
 
 
-\begin{frame}[c]{Integration of Rust in Python}
-    Konkrete Fragen beantworten: Integration Rust <-> Python
+\begin{frame}[c]{API: Rust to Python}
+    There is three main ways to use Rust from Python:
+    \pause
+    \begin{itemize}[<+->]
+        \item rust-cpython
+        \item pyO3
+        \item dylib
+    \end{itemize}
 \end{frame}
+
+\begin{frame}[c]{rust-cpython}
+    \begin{itemize}[<+(1)->]
+        \item Similar to C-Python headers
+        \item Grants access to the Python GIL
+        \item renaming needed
+        \item stable rust
+        \item easy package creation
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{pyO3}
+    \begin{itemize}[<+(1)->]
+        \item fork from rust-cpython
+        \item Grants access to the Python GIL
+        \item renaming needed
+        \item nightly rust
+        \item easy package creation
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{dylib}
+    \begin{itemize}[<+(1)->]
+        \item recommended in the Rust book
+        \item no renaming needed
+        \item stable rust
+        \item No access to the Python GIL
+        \item package creation possible
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[c]{API comparison for Rust in Python}
+    \normalsize
+
+\begin{tabular}{@{}lrrr@{}}
+    \textbf{API Comparison} & rust-cpython & pyO3 & dylib \\
+    \hline \pause
+    Memory from Python              & Yes           & Yes & \textbf{Optional} \\ \pause
+    renaming needed                 & Yes           & Yes & \textbf{No} \\ \pause
+    stable Rust                     & \textbf{Yes}  & No  & \textbf{Yes} \\ \pause
+    platform-specific               & Yes           & Yes & \textbf{No} \\ \pause
+    implementation effort           & Medium        & Medium & \textbf{Low} \\ \pause
+    creating python packages        & \textbf{Easy} & \textbf{Easy} & Normal \pause \\ \\
+    \hline
+    Good in: & 2/6 & 1/6 & \textbf{5/6} \\
+\end{tabular}
+\end{frame}
+
+
 
 
 

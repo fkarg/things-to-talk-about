@@ -40,7 +40,7 @@
         fannkuch-redux & \textbf{8.61} & 10.23 & 10.08 \\
         k-nucleotide & 5.01 & 5.25 & \textbf{3.76} \\
         fasta & 1.36 & 1.47 & \textbf{1.33} \\
-        mandelbrot & 1.65 & 1.96 & \textbf{1.5} \\
+        mandelbrot & 1.65 & 1.96 & \textbf{1.50} \\
         regex-redux & \textbf{1.46} & 2.43 & 1.82 \\ \hline
         Fastest in: & 3/10 & 4/10 & 4/10 \\
     \end{tabular} \\ \\
@@ -52,44 +52,34 @@
 
 
 
-\begin{frame}[c]{Rust: Advantages}
-    \Large
-    In General:
+\begin{frame}[c]{Rust: Advantages and Disadvantages}
+    General Advantages:
     \begin{itemize}[<+(1)->]
         \item High-Level Features
         \item Fast Language
         \item Safe Memory handling
         \item Strong Type system
     \end{itemize}
-\end{frame}
-
-
-\begin{frame}[c]{Rust: Advantages}
-    \Large
-    For this Project:
-    \begin{itemize}[<+(1)->]
-        \item Own CSRMatrix implementation
-        \item Faster and smaller, very specific
-    \end{itemize}
-\end{frame}
-
-
-
-\begin{frame}[c]{Rust: Disadvantages}
-    \Large
-    In General:
+    \pause
+    General Disadvantages:
     \begin{itemize}[<+(1)->]
         \item Young ecosystem
         \item Steep learning curve
         \item Higher initial compile times
-        \item Features not yet available
+        \item Language Features not yet available
     \end{itemize}
 \end{frame}
 
 
-\begin{frame}[c]{Rust: Disadvantages}
-    \Large
-    For this Project:
+\begin{frame}[c]{Rust: Advantages and Disadvantages}
+    Advantages for this Project:
+    \begin{itemize}[<+(1)->]
+        \item Own CSRMatrix implementation
+        \item No big dependencies
+        \item Faster and smaller, very specific
+    \end{itemize}
+    \pause
+    Disadvantages for this Project:
     \begin{itemize}[<+(1)->]
         \item No general implementation of CSRMatrix
         \item Only subset of features when compared to SciPy implementation
