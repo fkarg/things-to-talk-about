@@ -1,23 +1,24 @@
 \section{Rust}
 
 
-\begin{frame}[c]{Rust: Short History}
-    \Large
-    \begin{itemize}[<+(1)->]
-        \item Started out in 2006
-        \item Mozilla started sponsoring in 2009
-        \item Self-compiled in 2011
-        \item 1.0 released in 2015
-    \end{itemize}
-\end{frame}
+% \begin{frame}[c]{Rust: Short History}
+%     \Large
+%     \begin{itemize}[<+(1)->]
+%         \item Started out in 2006
+%         \item Mozilla started sponsoring in 2009
+%         \item Self-compiled in 2011
+%         \item 1.0 released in 2015
+%     \end{itemize}
+% \end{frame}
+
 
 \begin{frame}[c]{Rust: Language Features}
     \Large
     \begin{itemize}[<+(1)->]
         \item Syntax seems similar to C/C++
         \item Semantically closer to ML/Haskell
-        \item Memory-Safety (no NULL)
-        \item Memory Management (RAII)
+        \item Memory safety (no NULL)
+        % \item Memory management (RAII)
         \item Ownership
         \item Borrowing
         \item Lifetimes
@@ -31,7 +32,7 @@
     \normalsize
     \vfill
     \begin{tabular}{lrrr}
-        \textbf{Speed coparison} & C & Rust & C++ \\ \hline
+        \textbf{Speed comparison} & C & Rust & C++ \\ \hline
         n-body & 7.49 & \textbf{5.72} & 8.18 \\
         binary-trees & 3.48 & \textbf{3.15} & 3.79 \\
         pidigits & \textbf{1.75} & \textbf{1.75} & 1.89 \\
@@ -53,33 +54,33 @@
 
 
 \begin{frame}[c]{Rust: Advantages and Disadvantages}
-    General Advantages:
+    General advantages:
     \begin{itemize}[<+(1)->]
-        \item High-Level Features
-        \item Fast Language
-        \item Safe Memory handling
-        \item Strong Type system
+        \item High-Level features
+        \item Fast language
+        \item Safe memory handling
+        \item Strong type system
     \end{itemize}
     \pause
-    General Disadvantages:
+    General disadvantages:
     \begin{itemize}[<+(1)->]
         \item Young ecosystem
         \item Steep learning curve
         \item Higher initial compile times
-        \item Language Features not yet available
+        \item Language features not yet available
     \end{itemize}
 \end{frame}
 
 
 \begin{frame}[c]{Rust: Advantages and Disadvantages}
-    Advantages for this Project:
+    Advantages for this project:
     \begin{itemize}[<+(1)->]
         \item Own CSRMatrix implementation
-        \item No big dependencies
+        \item Not many dependencies
         \item Faster and smaller, very specific
     \end{itemize}
     \pause
-    Disadvantages for this Project:
+    Disadvantages for this project:
     \begin{itemize}[<+(1)->]
         \item No general implementation of CSRMatrix
         \item Only subset of features when compared to SciPy implementation

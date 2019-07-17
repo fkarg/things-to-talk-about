@@ -1,0 +1,46 @@
+[Take cable]
+
+Begin:
+[Introduction]
+
+Slide 1:
+ - dna is around 2m long
+ - dna compressed in cells
+ - picture shows such a contact matrix
+ - nothing in nature is happening randomly
+
+
+Slide 2:
+ - look at the roadmap
+ - first explain how we can get such a contact matrix
+ - these methods have certain biases, so we want to correct them
+ - one such algorithm is presented in the ICE section
+ - It was implemented in Rust so I'll give a quick introduction to that
+ - how the integration from python with rust worked out
+ - results of this implementation with the previous ones
+ - then we will already get to the conclusion about this work
+
+
+Slide 3:
+ - First, let us start with this method to get the contact matrix
+
+
+Slide 4:
+ - First we link all the contacting ends
+ - then we break the genome apart at certain points with a restriction enzyme
+ - we reconnect the parts that have not been connected before, and add biotin, to filter them later
+ - we unlink them, since they are also connected now
+ - These sequences are still to long for sequencing, so we break them apart by sonication with ultrasonic waves
+ - we filter for those fragments with biotin and sequence
+
+    Biases for each step:
+     - Some regions do easier biotin labeling than others
+     - PCR artifacts are included
+     - Sequencing itself has multiple biases
+     - Where to map multiple/unclear reads ?
+     - differing chromatin states
+     - more ...
+
+
+
+

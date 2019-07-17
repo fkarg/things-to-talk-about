@@ -20,7 +20,7 @@
         % \textbf{Matrix Details} & & & \\
         \textbf{Name}       & 25kb          & 50kb \\
         \hline
-        Filesize            & 1.1 GByte     & 732 MByte     \\
+        Filesize            & 1.1 GByte     & 0.73 GByte     \\
         Size                & \verb|123,841|       & \verb|61,928| \\
         Bin length          & \verb|25,000|        & \verb|50,000| \\
         Non-zero elements   & \verb|1,530,533,003| & \verb|1,053,216,825| \\
@@ -39,29 +39,26 @@
 \begin{frame}[c]{Peak Memory Usage}
     \only<1>{\includegraphics[scale=0.8]{maxresident_50}}
     \only<2>{\includegraphics[scale=0.8]{maxresident_25}}
-\end{frame}
-
-\begin{frame}[c]{Control Flow Diagram}
-    \pause
-    \includegraphics[scale=0.35]{correction_process}
+    \only<3>{\includegraphics[scale=0.35]{correction_process}}
 \end{frame}
 
 \begin{frame}[c]{Comparison of Memory needs}
     \begin{tabular}{lrrr}
         \textbf{Memory needs Comparison} & ICE & KR & RUST \\
-        \hline \pause
-        During correction (50kb) &   54.6 & 43.1 & \textbf{39}   \\ \pause
-        Maximum          (50kb) &   \textbf{69.2} & 77.6 & 81.7 \\ \pause
-        During correction (25kb) &   110 & 86 & \textbf{57}  \\ \pause
-        Maximum          (25kb) &   \textbf{110} & 112.7 & 118.6 \\
+        \hline
+        During correction (50kb) &   54.6 & 43.1 & \textbf{39.0}   \\
+        Maximum          (50kb) &   \textbf{69.2} & 77.6 & 81.7 \\
+        During correction (25kb) &   110.0 & 86.0 & \textbf{57.0}  \\
+        Maximum          (25kb) &   \textbf{110.0} & 112.7 & 118.6 \\
     \end{tabular}
 \end{frame}
 
 
-\begin{frame}[c]{Loading Times}
-    \only<2>{\includegraphics[scale=0.8]{loadtimes_25}}
-    \only<3>{\includegraphics[scale=0.8]{loadtimes_50}}
-\end{frame}
+% \begin{frame}[c]{Loading Times}
+%     \only<2>{\includegraphics[scale=0.35]{correction_process}}
+%     \only<3>{\includegraphics[scale=0.8]{loadtimes_25}}
+%     \only<4>{\includegraphics[scale=0.8]{loadtimes_50}}
+% \end{frame}
 
 
 \begin{frame}[c]{Runtime Length}
@@ -70,13 +67,21 @@
 \end{frame}
 
 
-\begin{frame}[c]{Multicore Runtime Length Comparison}
-    \only<2>{\includegraphics[scale=0.35]{correction_process}}
-    \only<3>{\includegraphics[scale=0.8]{compute_multi_25}}
-    \only<4>{\includegraphics[scale=0.8]{runtime_multi_50}}
-    \only<5>{\includegraphics[scale=0.8]{runtime_multi_25}}
+\begin{frame}[c]{Control Flow Diagram}
+    \pause
+    \includegraphics[scale=0.35]{correction_process}
 \end{frame}
 
+
+\begin{frame}[c]{Multicore Runtime Length Comparison}
+    % \only<2>{\includegraphics[scale=0.35]{correction_process}}
+    \only<2>{\includegraphics[scale=0.8]{compute_multi_25}}
+    \only<3>{\includegraphics[scale=0.8]{runtime_multi_50}}
+\end{frame}
+
+\begin{frame}[c]{Overall Runtime Length Comparison}
+    \includegraphics[scale=0.8]{runtime_multi_25}
+\end{frame}
 
 \begin{frame}[c]{Multicore Memory Comparison}
     \only<2>{\includegraphics[scale=0.8]{maxresident_multi_25}}
