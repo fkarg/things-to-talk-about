@@ -5,13 +5,18 @@
 \usepackage{multicol}
 
 
+\usepackage{minted}
+\usemintedstyle{pastie}
+
+
 \usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
 
 
-% \date{\today}
+\date{\today}
 % \date{12. Juli 2019}
 
-\institute{Student of Rationality}
+
+\institute{LessWrong Community Weekend 2019}
 % \titlegraphic{\vspace{4cm} \hspace{9cm} \includegraphics[height=2cm]{Logo-Uni-Freiburg.png}}
 
 
@@ -67,5 +72,19 @@
     % \clearpage
 \end{frame}
 
+
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
 
 

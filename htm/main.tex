@@ -3,11 +3,12 @@
 
 
 \title{Hierarchical Temporal Memory}
-\subtitle{And The Theory of Thousand Brains Intelligence}
+% \subtitle{And The Theory of Thousand Brains Intelligence}
+\subtitle{A Theoretical Framework for the Neocortex}
 \author{Felix Karg}
 
 
-\graphicspath{ {../template/} {../template_tex/} } % add further graphics paths here
+\graphicspath{ {../template/} {./graphics/} {../template_tex/} } % add further graphics paths here
 
 
 \input{setup}
@@ -22,8 +23,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \input{chapters/introduction}
+\input{chapters/recap}
+\section{Core Concepts}
+\input{chapters/overview}
 \input{chapters/hierarchies}
-% \input{chapters/sdr}
+\input{chapters/sdr}
 
 
 % \input{chapters/ml}
@@ -33,11 +37,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[standout]
-    \Large
-    QUESTIONS?
-\end{frame}
 
 \section{Sources}
 \begin{frame}[c,fragile,allowframebreaks]{Sources}
@@ -49,6 +48,9 @@ Drop me a mail: fkarg10[@]gmail.com \vfill \newpage
 \bibliographystyle{ieeetr}
 \bibliography{references.bib}
 \end{frame}
+
+
+\input{chapters/additional}
 
 
 \end{document}
