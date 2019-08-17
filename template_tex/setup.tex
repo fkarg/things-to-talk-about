@@ -5,6 +5,10 @@
 \usepackage{multicol}
 
 
+\usepackage{minted}
+\usemintedstyle{pastie}
+
+
 \usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
 
 
@@ -68,5 +72,19 @@
     % \clearpage
 \end{frame}
 
+
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
 
 
