@@ -5,6 +5,7 @@
 \usepackage{pstricks,pstricks-add}
 % \usetikzlibrary{arrows.meta}
 \usepackage{pst-func}
+\usepackage{pst-labo}
 \usepackage[screen]{geometry}
 
 
@@ -12,17 +13,28 @@
 
 \begin{document}
 
-\psset{xunit=1.25cm,yunit=10cm}
+% \psset{xunit=1.25cm,yunit=10cm}
 
-\begin{pspicture}(-6,-0.1) (6,.5)
-    \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
-    \psset{linewidth=1pt,plotpoints=100}
-    \psGauss[mue=0,sigma=1]{-4}{4}
-    \psTDist[linecolor=blue]{-4}{4}
+% #3
+% \begin{pspicture}
+%     \psset{bouchon=true, pince=true}
+%     \pstTubeEssais[glassType=tube]
+%     \hspace{2.5cm}
+%     \pstTubeEssais[glassType=erlen]
+% \end{pspicture}
 
-\end{pspicture}
+
+% #2
+% \begin{pspicture}(-6,-0.1) (6,.5)
+%     \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
+%     \psset{linewidth=1pt,plotpoints=100}
+%     \psGauss[mue=0,sigma=1]{-4}{4}
+%     \psTDist[linecolor=blue]{-4}{4}
+% 
+% \end{pspicture}
 
 
+% #1
 % \begin{tikzpicture}[shorten >= 5pt]
 % 
 %     \draw[help lines](0, 0) grid (10, 8);
