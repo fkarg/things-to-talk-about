@@ -3,9 +3,18 @@
 \usepackage{tikz}
 \usepackage{auto-pst-pdf}
 \usepackage{pstricks,pstricks-add}
+
+% #1
 % \usetikzlibrary{arrows.meta}
+
 \usepackage{pst-func}
-\usepackage{pst-labo}
+
+% #3
+% \usepackage{pst-labo}
+
+% #4
+% \usepackage{pst-fractal}
+
 \usepackage[screen]{geometry}
 
 
@@ -13,7 +22,11 @@
 
 \begin{document}
 
-% \psset{xunit=1.25cm,yunit=10cm}
+% #4
+% \begin{pspicture}(5,5)
+%     \psSier(0,0)(3,6)(6,0)
+% \end{pspicture}
+
 
 % #3
 % \begin{pspicture}
@@ -25,6 +38,7 @@
 
 
 % #2
+% \psset{xunit=1.25cm,yunit=10cm}
 % \begin{pspicture}(-6,-0.1) (6,.5)
 %     \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
 %     \psset{linewidth=1pt,plotpoints=100}
