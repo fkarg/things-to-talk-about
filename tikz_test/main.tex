@@ -5,15 +5,15 @@
 \usepackage{pstricks,pstricks-add}
 
 % #1
-% \usetikzlibrary{arrows.meta}
+\usetikzlibrary{arrows.meta}
 
 \usepackage{pst-func}
 
 % #3
-% \usepackage{pst-labo}
+\usepackage{pst-labo}
 
 % #4
-% \usepackage{pst-fractal}
+\usepackage{pst-fractal}
 
 \usepackage[screen]{geometry}
 
@@ -23,45 +23,45 @@
 \begin{document}
 
 % #4
-% \begin{pspicture}(5,5)
-%     \psSier(0,0)(3,6)(6,0)
-% \end{pspicture}
+\begin{pspicture}(5,5)
+    \psSier(0,0)(3,6)(6,0)
+\end{pspicture}
 
 
 % #3
-% \begin{pspicture}
-%     \psset{bouchon=true, pince=true}
-%     \pstTubeEssais[glassType=tube]
-%     \hspace{2.5cm}
-%     \pstTubeEssais[glassType=erlen]
-% \end{pspicture}
+\begin{pspicture}
+    \psset{bouchon=true, pince=true}
+    \pstTubeEssais[glassType=tube]
+    \hspace{2.5cm}
+    \pstTubeEssais[glassType=erlen]
+\end{pspicture}
 
 
 % #2
-% \psset{xunit=1.25cm,yunit=10cm}
-% \begin{pspicture}(-6,-0.1) (6,.5)
-%     \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
-%     \psset{linewidth=1pt,plotpoints=100}
-%     \psGauss[mue=0,sigma=1]{-4}{4}
-%     \psTDist[linecolor=blue]{-4}{4}
-% 
-% \end{pspicture}
+\psset{xunit=1.25cm,yunit=10cm}
+\begin{pspicture}(-6,-0.1) (6,.5)
+    \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
+    \psset{linewidth=1pt,plotpoints=100}
+    \psGauss[mue=0,sigma=1]{-4}{4}
+    \psTDist[linecolor=blue]{-4}{4}
+
+\end{pspicture}
 
 
 % #1
-% \begin{tikzpicture}[shorten >= 5pt]
-% 
-%     \draw[help lines](0, 0) grid (10, 8);
-% 
-%     \path node (a) [draw, fill=blue, text=red] at (2, 5) {Hello World!};
-%     \path node (b) [draw, fill=white, text=black] at (2, 2) {Hello World!};
-%     \path node (c) [draw, fill=black, text=white] at (5, 2) {Hello World!};
-%     \path node (d) [draw, fill=green, text=blue] at (5, 5) {Hello World!};
-% 
-%     \draw[->, thick,arrows={-Stealth[scale=2]}] (a) -- (c);
-%     \draw[->, thick,arrows={<>-<>Stealth[scale=1.5]}] (b) -- (d);
-% 
-% \end{tikzpicture}
+\begin{tikzpicture}[shorten >= 5pt]
+
+    \draw[help lines](0, 0) grid (10, 8);
+
+    \path node (a) [draw, fill=blue, text=red] at (2, 5) {Hello World!};
+    \path node (b) [draw, fill=white, text=black] at (2, 2) {Hello World!};
+    \path node (c) [draw, fill=black, text=white] at (5, 2) {Hello World!};
+    \path node (d) [draw, fill=green, text=blue] at (5, 5) {Hello World!};
+
+    \draw[->, thick,arrows={-Stealth[scale=2]}] (a) -- (c);
+    \draw[->, thick,arrows={<>-<>Stealth[scale=1.5]}] (b) -- (d);
+
+\end{tikzpicture}
 
 \end{document}
 
