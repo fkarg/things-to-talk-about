@@ -1,24 +1,41 @@
 \documentclass[ngerman]{article}
 \usepackage{babel}
 \usepackage{tikz}
-\usetikzlibrary{arrows.meta}
+\usepackage{auto-pst-pdf}
+\usepackage{pstricks,pstricks-add}
+% \usetikzlibrary{arrows.meta}
+\usepackage{pst-func}
 \usepackage[screen]{geometry}
+
+
+
 
 \begin{document}
 
-\begin{tikzpicture}[shorten >= 5pt]
+\psset{xunit=1.25cm,yunit=10cm}
 
-    \draw[help lines](0, 0) grid (10, 8);
+\begin{pspicture}(-6,-0.1) (6,.5)
+    \psaxes[Dy=0.1]{->}(0,0)(-4,-0)(5,.5)
+    \psset{linewidth=1pt,plotpoints=100}
+    \psGauss[mue=0,sigma=1]{-4}{4}
+    \psTDist[linecolor=blue]{-4}{4}
 
-    \path node (a) [draw, fill=blue, text=red] at (2, 5) {Hello World!};
-    \path node (b) [draw, fill=white, text=black] at (2, 2) {Hello World!};
-    \path node (c) [draw, fill=black, text=white] at (5, 2) {Hello World!};
-    \path node (d) [draw, fill=green, text=blue] at (5, 5) {Hello World!};
+\end{pspicture}
 
-    \draw[->, thick,arrows={-Stealth[scale=2]}] (a) -- (c);
-    \draw[->, thick,arrows={<>-<>Stealth[scale=1.5]}] (b) -- (d);
 
-\end{tikzpicture}
+% \begin{tikzpicture}[shorten >= 5pt]
+% 
+%     \draw[help lines](0, 0) grid (10, 8);
+% 
+%     \path node (a) [draw, fill=blue, text=red] at (2, 5) {Hello World!};
+%     \path node (b) [draw, fill=white, text=black] at (2, 2) {Hello World!};
+%     \path node (c) [draw, fill=black, text=white] at (5, 2) {Hello World!};
+%     \path node (d) [draw, fill=green, text=blue] at (5, 5) {Hello World!};
+% 
+%     \draw[->, thick,arrows={-Stealth[scale=2]}] (a) -- (c);
+%     \draw[->, thick,arrows={<>-<>Stealth[scale=1.5]}] (b) -- (d);
+% 
+% \end{tikzpicture}
 
 \end{document}
 
