@@ -12,10 +12,11 @@ all: dir $(PROJNAME).pdf
 
 dir:
 	mkdir -p $(OUT_DIR)
-	mkdir -p $(OUT_DIR)/chapters
 
-$(PROJNAME).pdf: $(PROJNAME).tex
-	latexmk -outdir=$(OUT_DIR) -pdf -use-make -file-line-error -shell-escape $<
+$(PROJNAME).pdf: $(PROJNAME).tex 
+	pdflatex -output-directory=$(OUT_DIR) -shell-escape $<
+	# latexmk -outdir=$(OUT_DIR) -pdf -use-make -file-line-error -shell-escape $<
+	# latexmk -outdir=$(OUT_DIR) -file-line-error -shell-escape $<
 	cp $(OUT_DIR)/$(PROJNAME).pdf $(PROJNAME).pdf
 
 clean:

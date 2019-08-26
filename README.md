@@ -1,7 +1,6 @@
 # things-to-talk-about
 A collection of talks / presentations I created or held at some point.
 
-Newer ones use `latexmk`/`make`, for older ones simply use `pdflatex main.tex` directly.
+after updating some latex-file, please use `make` in the respective directory (or in the repository itself) to update the respective pdf.
 
-## Todo
-- [ ] update **all** to _actually use_ `latexmk`
+
