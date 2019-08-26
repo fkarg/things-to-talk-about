@@ -18,9 +18,5 @@ $(PROJNAME).pdf: $(PROJNAME).tex
 	latexmk -outdir=$(OUT_DIR) -pdf -use-make -file-line-error -shell-escape $<
 	cp $(OUT_DIR)/$(PROJNAME).pdf $(PROJNAME).pdf
 
-cleanall:
-	rm -rf $(OUT_DIR)/*
-
 clean:
-	latexmk -outdir=$(OUT_DIR)/ -c
-
+	rm -rf $(OUT_DIR)
