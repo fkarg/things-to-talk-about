@@ -44,8 +44,8 @@
 
 
 \begin{frame}[c]{Sparse Distributed Representation - Example}
-    \pause
-    \includegraphics[width=0.95\textwidth]{region_sparse}
+    \only<2>{\includegraphics[width=0.95\textwidth]{region_sparse}}
+    \only<3>{\includegraphics[height=0.9\textheight]{sdr_example}}
     % \includegraphics[width=0.9\textwidth]{region_predict}
 \end{frame}
 
@@ -53,33 +53,29 @@
 \begin{frame}[c]{Sparse Distributed Representation - Introduction}
     \Large
     \begin{itemize}[<+(1)->]
-        \item Datastructure of the Brain
+        \item Datastructure of the brain
         \item Sparse (around 2\% are active)
         \item Distributed (clusters are somewhat rare)
         \item Inhibitory Mechanisms
-        \item Neuron States actually have 'Meaning'
+        \item Neuron states actually have 'meaning'
+        \item Combined, they give context as well
+        \item Many mechanisms in the brain would not work otherwise
     \end{itemize}
 \end{frame}
 
 
 
+% \subsection{Time}
 
 
-% \begin{frame}[c]{Bit Arrays}
-%     \Large
-%     \pause
-%     % Who can code ... ?
-% \end{frame}
-
-
-% \begin{frame}[c]{Attributes of the Brain}
-%     \Large
-%     \begin{itemize}[<+(1)->]
-%         \item Invariant
-%         \item Auto-associative
-%         \item Massively Parallel
-%     \end{itemize}
-% \end{frame}
-
+\begin{frame}[c]{The role of Time}
+    \Large
+    Crucial for learning, inference and prediction.
+    \begin{itemize}[<+(1)->]
+        \item Inference is hard on static information
+        \item Predictions are somewhat inherently time-based
+        \item Learning is hard without feedback
+    \end{itemize}
+\end{frame}
 
 
