@@ -1,0 +1,109 @@
+% \documentclass[12pt,compress,english,utf8,t,usenames,dvipsnames]{beamer}
+\documentclass[12pt,compress,english,utf8,t,usenames,dvipsnames,handout]{beamer}
+\usepackage[ngerman, english,main=english]{babel}
+
+
+\title{Hierarchical Temporal Memory}
+\subtitle{Biological And Machine Intelligence}
+\author{Felix Karg}
+
+
+\graphicspath{ {../template/} {./graphics/} {../template_tex/} } % add further graphics paths here
+
+
+\input{setup}
+% \input{setup}
+
+
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % \input{chapters/introduction}
+\input{chapters/note}
+\input{chapters/bio}
+\input{chapters/overview}
+
+\section{Core Concepts}
+\input{chapters/hierarchies}
+\input{chapters/sdr}
+
+\input{chapters/learning}
+\input{chapters/spatial_pooling}
+\input{chapters/temporal_pooling}
+
+\input{chapters/implications}
+
+% % \input{chapters/recap}
+
+\input{chapters/open}
+
+
+
+% \input{chapters/ml}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sources}
+\begin{frame}[c,fragile,allowframebreaks]{Sources}
+    \Large
+    \vfill
+The slides are online: \url{https://github.com/fkarg/things-to-talk-about/blob/master/htm/main.pdf} \vfill
+Drop me a mail: fkarg10@gmail.com \vfill \newpage
+% \bibliographystyle{plainnat}
+\bibliographystyle{ieeetr}
+\bibliography{references.bib}
+\end{frame}
+
+
+\input{chapters/additional}
+
+
+
+\end{document}
+
+
+% TODO:
+
+% Include Topics/Facts:
+%
+% - explain SDRs
+% - explain spatial & temporal pooler
+% - explain HTM
+% - explain reticular activating system
+% - explain gradient for Autism and that it is more 'bottom up'
+% - explain 'top-down' phenomena and common biases
+% - explain theory: inhibited-booost: hallucination
+% - The datastructure of the brain
+
+% Roadmap (?)
+%
+% - First: What is Intelligence ? (Early path, why we want to know this and why this is the most likely path)
+% - Introduce the biological neuron we will be talking about (multiple dendrites, one axon, ...)
+% - Introduce (SDR) Sparse Distributed Representations, in-Depth
+% - Introduce the CLA
+% - Introduce HTMv3 !
+% - Motor movements are just very strong predictions the body 'makes happen'
+%   - Flow state is where everything is exactly as predicted
+% - Mistakes that happen by accidential correlation: search for good example; mistaking something to be true
+% - explain gradient for Einstein/Craziness, proving vs disproving in the brain -> THC is bad
+% - Mistakes that happen by top-down enforcing (e.g. the dalmatine picture, scrambled words)
+% - Location-based composition: This explains mind palaces!
+% - Everything is a 'conceptspace' -
+
+% - Explain Priming based on predictive stuff (the priming-bias)
+% - Explain biases based on these models
+% - Explain the fact that smarter people have less Brain activity
+% - Explain the bayesian-reasioning part
+% - Explain how cortical columns create quite powerful models
+
+
+
+%
