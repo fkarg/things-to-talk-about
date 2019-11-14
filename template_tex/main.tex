@@ -8,6 +8,9 @@
 
 \graphicspath{ {../template/} {./graphics} {../template_tex/} } % add further graphics paths here
 
+\newif\iftwocols
+\twocolsfalse
+% \twocolstrue
 
 \input{setup}
 
@@ -16,7 +19,12 @@
 \newif\ifonline
 \onlinefalse
 % \onlinefalse
-
+% usage:
+% \ifonline
+%   <true text>
+% \else % <- optional
+%   <false text>
+% \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{chapters/introduction}
