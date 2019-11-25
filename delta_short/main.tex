@@ -1,0 +1,41 @@
+\documentclass[12pt,compress,ngerman,english,utf8,t,usenames,dvipsnames]{beamer}
+\usepackage[ngerman, english]{babel}
+
+
+\title{Überleben während der Klausurphase}
+\author{Dominik, Max, Ergys, Felix}
+
+
+\graphicspath{ {../template/} {./graphics} {../template_tex/} } % add further graphics paths here
+
+\newif\iftwocols
+\twocolsfalse
+% \twocolstrue
+
+\input{setup}
+
+
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+% usage:
+% \ifonline
+%   <true text>
+% \else % <- optional
+%   <false text>
+% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/additional}
+
+\end{document}
