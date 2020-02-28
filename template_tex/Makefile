@@ -9,6 +9,7 @@
 
 PROJNAME=main_handout main_present
 PDFNAMES=$(foreach PDF, $(PROJNAME),$(PDF).pdf)
+COMPRESSED=$(foreach PDF, $(PROJNAME), $(PDF)_comp.pdf)
 OUT_DIR=out
 
 .PHONY: $(PDFNAMES) fast all compress clean
@@ -17,8 +18,12 @@ fast: dir pdfpc main_handout.pdf copy
 
 all: dir pdfpc $(PDFNAMES) copy
 
-compress: main_handout.pdf
-	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -sOutputFile=main_handout_comp.pdf main_handout.pdf
+
+# -dPDFSETTINGS=
+# Filesize: /ebook < /printer < /prepress < /default
+
+compress: fast
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dPrinted=false -dBATCH -dPDFSETTINGS=/printer -sOutputFile=main_comp.pdf main_handout.pdf
 
 dir:
 	mkdir -p $(OUT_DIR)/chapters
