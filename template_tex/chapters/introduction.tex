@@ -9,36 +9,37 @@
 
 \begin{frame}[c]{Example slide}
     \pnote{The items to discuss are:
-    - First Element
+    - First Element \n
     - Second Element
     Later on, also:
     - Third Element
-  }
+    }
+    \pnote{Note in next line}
     \Large
     \begin{itemize}[<+->]
-        \item First Element
+        \item Shows immediately!
         \item Second Element
         \item Third Element
     \end{itemize}
 \end{frame}
 
-\begin{frame}[c]{Other example slide}
+
+\begin{frame}[c]{Element visible in handout only}
     \Large
     \begin{itemize}[<+(1)->]
-        \item First Element
+        \item Delay of one slide!
         \item Second Element
-        \item Third Element
+        \item<handout> Only visible in Handout!
     \end{itemize}
     \pnote{The notes are visible BEFORE the slide in pdfpc!}
 \end{frame}
 
-\begin{frame}[c]{Yet another example slide}
+
+\begin{frame}<handout:0>[c]{Not Visible in Handout}
     \Large
-    \begin{itemize}
-        \item First Element
-            \pause
+    \begin{itemize}[<+(1)->]
+        \item These slides do not show in Handout
         \item Second Element
-            \pause
         \item Third Element
     \end{itemize}
 \end{frame}
@@ -46,11 +47,12 @@
 
 \begin{frame}[c]{Prevent Wobbeling}
 
-    Simply use a \verb!overlayarea!! \\
-    \verb!
-        \begin{overlayarea}{\textwidth}{0.8\textheight}
-        \end{overlayarea}
-        !
+    Simply use an overlayarea!
+
+    % \begin{verbatim}
+    %     \begin{overlayarea}{\textwidth}{0.8\textheight}
+    %     \end{overlayarea}
+    % \end{verbatim}
 
 \end{frame}
 
