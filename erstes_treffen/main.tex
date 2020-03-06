@@ -1,0 +1,55 @@
+% \documentclass[12pt,compress,ngerman,english,utf8,t,usenames,dvipsnames]{beamer}
+\documentclass[12pt,compress,ngerman,english,utf8,t,usenames,dvipsnames,handout]{beamer}
+\usepackage[ngerman, english]{babel}
+
+
+\title{Unifest Infos für Festgruppen}
+\author{Felix Karg, Daniela Goth}
+
+
+\graphicspath{ {./img/} {../template/} {./graphics/} {../template_tex/} } % add further graphics paths here
+
+\newif\iftwocols
+\twocolsfalse
+% \twocolstrue
+
+\input{setup}
+
+
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+% usage:
+% \ifonline
+%   <true text>
+% \else % <- optional
+%   <false text>
+% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/introduction}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}[c,fragile,allowframebreaks]{Sources}
+% % \bibliographystyle{plainnat}
+% \bibliographystyle{ieeetr}
+% \bibliography{references.bib}
+% \end{frame}
+
+
+\begin{frame}[standout]
+    \Huge
+    Was für Fragen habt ihr an uns?
+\end{frame}
+
+\input{chapters/additional}
+
+\end{document}
+

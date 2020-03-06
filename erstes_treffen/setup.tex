@@ -1,0 +1,129 @@
+
+\usepackage{etex}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{marvosym}
+\usepackage{pdfpcnotes}
+
+
+
+% \usepackage{minted}
+% \usemintedstyle{pastie}
+
+
+\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+
+
+% \date{\today}
+\date{14. Januar 2020}
+
+
+\institute{AStA Unifest Festgruppenkoordination}
+% REPLACE with new Unifest Logo
+\titlegraphic{\vspace{4cm} \hspace{7cm} \includegraphics[height=3cm]{quadratisch}}
+
+\iftwocols
+\AtBeginSection[]
+{
+    \large
+    \begin{frame}{Inhalt}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \large
+    \begin{frame}{Inhalt}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection,currentsubsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\else
+
+\AtBeginSection[]
+{
+    \large
+    \begin{frame}{Inhalt}
+        \tableofcontents[currentsection]
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \large
+    \begin{frame}{Inhalt}
+        \tableofcontents[currentsection,currentsubsection]
+        \clearpage
+    \end{frame}
+}
+\fi
+
+
+\begin{document}
+
+\maketitle
+
+% multicols from:
+% https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\iftwocols
+\begin{frame}{Inhalt}
+    \large
+    \begin{multicols}{2}
+%        \tableofcontents[hidesubsections]
+        \tableofcontents[]
+    \end{multicols}
+    % \clearpage
+\end{frame}
+
+\else
+
+\begin{frame}{Inhalt}
+    \large
+%   \tableofcontents[hidesubsections]
+    \tableofcontents[]
+    % \clearpage
+\end{frame}
+\fi
+
+
+\newcommand{\code}[1]{
+    \begin{center}
+    \setlength{\fboxrule}{1pt}
+    \setlength{\fboxsep}{8pt}
+        {\fbox{\parbox{0.81\textwidth}{#1}}}
+   \end{center}
+}
+
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+
+\newcommand{\mailto}[1]{
+    \href{mailto:#1}{#1}
+}
+
+
+
