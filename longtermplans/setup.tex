@@ -1,0 +1,152 @@
+
+\usepackage{etex}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{pdfpcnotes}
+% \usepackage[dvipsnames]{xcolor}
+
+
+% \usepackage{minted}
+% \usemintedstyle{pastie}
+
+
+\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+
+
+\date{\today}
+% \date{12. Juli 2019}
+
+
+% \institute{Add Your Institute here}
+% \titlegraphic{\vspace{4cm} \hspace{7cm} \includegraphics[height=2cm]{Logo_INST}}
+% \titlegraphic{\vspace{4cm} \hspace{7cm} \Huge\LaTeX}
+
+\iftwocols
+\AtBeginSection[]
+{
+    \large
+    \begin{frame}{Agenda}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \large
+    \begin{frame}{Agenda}
+        \begin{multicols}{2}
+            \tableofcontents[currentsection,currentsubsection]
+        \end{multicols}
+        \clearpage
+    \end{frame}
+}
+
+\else
+
+\AtBeginSection[]
+{
+    \large
+    \begin{frame}{Agenda}
+        \tableofcontents[currentsection]
+        \clearpage
+    \end{frame}
+}
+
+\AtBeginSubsection[]
+{
+    \large
+    \begin{frame}{Agenda}
+        \tableofcontents[currentsection,currentsubsection]
+        \clearpage
+    \end{frame}
+}
+\fi
+
+
+\begin{document}
+
+\maketitle
+
+% multicols from:
+% https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\iftwocols
+\begin{frame}{Agenda}
+    \large
+    \begin{multicols}{2}
+%        \tableofcontents[hidesubsections]
+        \tableofcontents[]
+    \end{multicols}
+    % \clearpage
+\end{frame}
+
+\else
+
+\begin{frame}{Agenda}
+    \large
+%   \tableofcontents[hidesubsections]
+    \tableofcontents[]
+    % \clearpage
+\end{frame}
+\fi
+
+
+\newcommand{\code}[1]{
+    \begin{center}
+    \setlength{\fboxrule}{1pt}
+    \setlength{\fboxsep}{8pt}
+        {\fbox{\parbox{0.81\textwidth}{#1}}}
+   \end{center}
+}
+
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+
+\newcommand{\mailto}[1]{
+    \href{mailto:#1}{#1}
+}
+
+\newcommand{\todo}[1]{
+    {\Large\color{red}{(TODO: #1)}}
+}
+
+% \definecolor{green1}{RGB}{38, 69, 37} % #264525
+\definecolor{green1}{RGB}{72, 129, 69} % #488145
+% \definecolor{blue1}{RGB}{7, 43, 94} % #072b5e
+\definecolor{blue1}{RGB}{14, 82, 179} % #0e52b3
+% \definecolor{violet1}{RGB}{58, 38, 68} % #3a2644
+\definecolor{violet1}{RGB}{108, 72, 126} % #6c487e
+% \definecolor{orang1}{RGB}{, , 0} % #663400
+\definecolor{orang1}{RGB}{193, 98, 0} % #c16200
+
+
+\newcommand{\green}[1]{
+    \textcolor{green1}{#1}
+}
+\newcommand{\blue}[1]{
+    \textcolor{blue1}{#1}
+}
+\newcommand{\vio}[1]{
+    \textcolor{violet1}{#1}
+}
+\newcommand{\orang}[1]{
+    \textcolor{orang1}{#1}
+}

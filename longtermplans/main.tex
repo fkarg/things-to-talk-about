@@ -1,0 +1,61 @@
+\usepackage[ngerman, english]{babel}
+
+
+\title{Goal Setting Workshop}
+\author{Felix Karg}
+
+
+\graphicspath{ {./img/} {../template/} {../template_tex/} } % add further graphics paths here
+
+\newif\iftwocols
+\twocolsfalse
+% \twocolstrue
+
+\include{setup}
+
+
+
+\newif\ifonline
+\onlinefalse
+% \onlinefalse
+% usage:
+% \ifonline
+%   <true text>
+% \else % <- optional
+%   <false text>
+% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%BEGINNING%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\include{chapters/introduction}
+\include{chapters/starting_point}
+% \include{chapters/setting_goals}
+% \include{chapters/planning}
+% \include{chapters/execution}
+% \include{chapters/conclusion}
+% '\include'
+% - gives speed bonus when building, through caching in a seperate *.aux file
+% - has a 'page break'
+% - cannot be nested
+% ------------- VS -------------
+% '\input'
+% - can be nested
+% - does not have 'page breaks'
+% - gives no caching benefit
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SOURCES%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[c,fragile,allowframebreaks]{Quellen}
+% \bibliographystyle{plainnat}
+\bibliographystyle{ieeetr}
+\bibliography{references.bib}
+\end{frame}
+
+
+\include{chapters/additional}
+
+\end{document}
