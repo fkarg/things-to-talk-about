@@ -32,6 +32,28 @@
 \patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{} % <- this one finally works.
 \makeatother
 
+% \AtBeginSection[]
+% {
+% \begin{frame}[c, plain]
+%   \begin{minipage}{22em}
+%     \usebeamercolor[fg]{section title}
+%     \usebeamerfont{section title}
+%
+%     % \insertsectionhead\\[-1ex]
+%     \iftwocols
+%     \begin{multicols}{2}
+%     \tableofcontents[currentsection, hideallsubsections]
+%     \end{multicols}
+%     \else
+%     \tableofcontents[currentsection, hideallsubsections]
+%     \fi
+%
+%     % \usebeamertemplate*{progress bar in section page}
+%   \end{minipage}
+% \end{frame}
+% }
+% sadly, this does not at all compile and throws weird errors
+
 
 \iftwocols
 \AtBeginSection[]
@@ -44,11 +66,12 @@
     \begin{multicols}{2}
     \tableofcontents[currentsection, hideallsubsections]
     \end{multicols}
-    % \usebeamertemplate*{progress bar in section page}
+    % \usebeamertemplate*{progress bar in section page} % progress bar
   \end{minipage}
 \end{frame}
 }
 \else
+
 \AtBeginSection[]
 {
 \begin{frame}[c, plain]
@@ -61,7 +84,6 @@
   \end{minipage}
 \end{frame}
 }
-
 \fi
 
 \AtBeginSubsection[]
@@ -72,9 +94,6 @@
     \usebeamercolor[fg]{section title}
     \usebeamerfont{section title}
     \insertsectionhead\\[-1ex]
-    % \begin{multicols}{2}
-    % \tableofcontents[sectionstyle=show/hide,subsectionstyle=hide/hide/hide]
-    % \end{multicols}
 
     \usebeamertemplate*{progress bar in section page}
     \par
@@ -88,43 +107,16 @@
 \end{frame}
 }
 
-\begin{document}
 
-\maketitle
-
-\addtocounter{framenumber}{1}
-
-% multicols from:
-% https://tex.stackexchange.com/questions/24343/splitting-toc-into-two-columns-on-single-frame-in-beamer
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\iftwocols
-
-\begin{frame}[c,plain]% {Agenda}
-    \begin{minipage}{22em}
-    \usebeamerfont{section title}
-    \usebeamercolor[fg]{section title}
-    \begin{multicols}{2}
-    \tableofcontents[hideallsubsections]
-%   \tableofcontents[]
-    \end{multicols}
-    \end{minipage}
-    % \clearpage
-\end{frame}
-
-\else
-
-\begin{frame}[c,plain]% {Agenda}
-    \begin{minipage}{22em}
-    \usebeamerfont{section title}
-    \usebeamercolor[fg]{section title}
-    \tableofcontents[hideallsubsections]
-%   \tableofcontents[]
-    \end{minipage}
-    % \clearpage
-\end{frame}
-\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Newcommand definitions
+% - code[1]
+% - backupbegin
+% - backupend
+% - mailto[1]
+% - todo[1]
+% Environments:
+% - codeboxed[1]
 
 
 \newcommand{\code}[1]{
@@ -180,3 +172,41 @@
 \newcommand{\orang}[1]{
     \textcolor{orang1}{#1}
 }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% begin document
+
+\begin{document}
+\maketitle
+\addtocounter{framenumber}{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agenda
+
+\iftwocols
+
+\begin{frame}[c,plain]% {Agenda}
+    \begin{minipage}{22em}
+    \usebeamerfont{section title}
+    \usebeamercolor[fg]{section title}
+    \begin{multicols}{2}
+    \tableofcontents[hideallsubsections]
+%   \tableofcontents[]
+    \end{multicols}
+    \end{minipage}
+\end{frame}
+
+\else
+
+\begin{frame}[c,plain]% {Agenda}
+    \begin{minipage}{22em}
+    \usebeamerfont{section title}
+    \usebeamercolor[fg]{section title}
+    \tableofcontents[hideallsubsections]
+%   \tableofcontents[]
+    \end{minipage}
+\end{frame}
+\fi
