@@ -1,4 +1,3 @@
-
 \usepackage{etex}
 \usepackage{graphicx}
 \usepackage[export]{adjustbox}
@@ -12,7 +11,7 @@
 % \usemintedstyle{pastie}
 
 
-\usetheme[numbering=fraction, progressbar=frametitle]{metropolis}
+\usetheme[numbering=counter, progressbar=frametitle, subsectionpage=progressbar]{metropolis}
 
 
 \date{December 29, 2020}
@@ -26,24 +25,43 @@
 \iftwocols
 \AtBeginSection[]
 {
-    \large
-    \begin{frame}{Agenda}
-        \begin{multicols}{2}
-            \tableofcontents[currentsection]
-        \end{multicols}
-        \clearpage
-    \end{frame}
+\begin{frame}[c, plain]
+  \begin{minipage}{22em}
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+    % \begin{multicols}{2}
+    % \tableofcontents[sectionstyle=show/hide,subsectionstyle=hide/hide/hide]
+    % \tableofcontents[currentsection, hideallsubsections]
+    % \end{multicols}
+    \usebeamertemplate*{progress bar in section page}
+  \end{minipage}
+\end{frame}
+
 }
 
 \AtBeginSubsection[]
 {
-    \large
-    \begin{frame}{Agenda}
-        \begin{multicols}{2}
-            \tableofcontents[currentsection,currentsubsection]
-        \end{multicols}
-        \clearpage
-    \end{frame}
+\begin{frame}[c,plain]
+  \begin{minipage}{22em}
+    \raggedright
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+    % \begin{multicols}{2}
+    % \tableofcontents[sectionstyle=show/hide,subsectionstyle=hide/hide/hide]
+    % \end{multicols}
+
+    \usebeamertemplate*{progress bar in section page}
+    \par
+    \ifx\insertsubsectionhead\@empty\else%
+      \usebeamercolor[fg]{subsection title}%
+      \usebeamerfont{subsection title}%
+      \vspace{0.5cm}
+      \tableofcontents[sectionstyle=hide/hide,subsectionstyle=show/shaded/hide]
+    \fi
+  \end{minipage}
+\end{frame}
 }
 
 \else
@@ -82,9 +100,10 @@
 \iftwocols
 \begin{frame}{Agenda}
     \large
+    \bfseries
     \begin{multicols}{2}
-%        \tableofcontents[hidesubsections]
-        \tableofcontents[]
+        \tableofcontents[hidesubsections]
+%        \tableofcontents[]
     \end{multicols}
     % \clearpage
 \end{frame}
@@ -93,6 +112,7 @@
 
 \begin{frame}{Agenda}
     \large
+    \bfseries
 %   \tableofcontents[hidesubsections]
     \tableofcontents[]
     % \clearpage
