@@ -13,6 +13,7 @@
 
 
 \usetheme[numbering=counter,progressbar=frametitle,block=fill]{metropolis}
+\setbeamerfont{block title}{size=\large}
 
 
 \date{December 29, 2020}
@@ -178,7 +179,16 @@
 % \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}} \\
 % \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$} \\
 % $\text{\rlap{$\checkmark$}}\square$
-\newcommand{\cmb}{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
+\newcommand{\cmb}{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark\hspace{0.2em}$}}
+
+
+\newcommand{\fpause}{
+\addtocounter{framenumber}{1}
+\begin{frame}[standout]
+    Pause
+\end{frame}}
+
+
 
 % from: https://tex.stackexchange.com/questions/365231/enclose-a-custom-quote-environment-in-quotes-from-csquotes
 \usepackage[style=british]{csquotes}
