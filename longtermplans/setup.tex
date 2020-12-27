@@ -4,6 +4,7 @@
 \usepackage{multicol}
 \usepackage{pdfpcnotes}
 \usepackage{pdfpages}
+\usepackage{amssymb}
 % \usepackage[dvipsnames]{xcolor}
 
 
@@ -172,6 +173,12 @@
 \newcommand{\orang}[1]{
     \textcolor{orang1}{#1}
 }
+
+% from: https://tex.stackexchange.com/questions/16000/creating-boxed-check-mark/21442
+% \mbox{\ooalign{$\checkmark$\cr\hidewidth$\square$\hidewidth\cr}} \\
+% \makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$} \\
+% $\text{\rlap{$\checkmark$}}\square$
+\newcommand{\cmb}{\makebox[0pt][l]{$\square$}\raisebox{.15ex}{\hspace{0.1em}$\checkmark$}}
 
 % from: https://tex.stackexchange.com/questions/365231/enclose-a-custom-quote-environment-in-quotes-from-csquotes
 \usepackage[style=british]{csquotes}
