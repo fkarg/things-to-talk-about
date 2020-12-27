@@ -11,7 +11,7 @@
 % \usemintedstyle{pastie}
 
 
-\usetheme[numbering=counter, progressbar=frametitle, subsectionpage=progressbar]{metropolis}
+\usetheme[numbering=counter,progressbar=frametitle,block=fill]{metropolis}
 
 
 \date{December 29, 2020}
@@ -172,6 +172,18 @@
 \newcommand{\orang}[1]{
     \textcolor{orang1}{#1}
 }
+
+% from: https://tex.stackexchange.com/questions/365231/enclose-a-custom-quote-environment-in-quotes-from-csquotes
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+  \hbox{}\nobreak\hfill #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+  {\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
 
 
 
