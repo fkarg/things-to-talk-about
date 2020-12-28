@@ -16,6 +16,8 @@ OUT_DIR=out
 
 fast: dir pdfpc main_handout.pdf copy
 
+long: dir pdfpc main_present.pdf copy
+
 all: dir pdfpc $(PDFNAMES) copy
 
 
