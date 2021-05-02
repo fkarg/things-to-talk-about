@@ -45,3 +45,4 @@ copy:
 
 clean:
 	rm -rf $(OUT_DIR)
+	rm -rf _minted*
