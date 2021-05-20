@@ -8,40 +8,46 @@
 
 
 PROJNAME=main_handout main_present
-PDFNAMES=$(foreach PDF, $(PROJNAME),$(PDF).pdf)
-COMPRESSED=$(foreach PDF, $(PROJNAME), $(PDF)_comp.pdf)
+PDFNAMES=$(addsuffix .pdf, $(PROJNAME))
+COMPRESSED=$(addsuffix _compr.pdf, $(PROJNAME))
 OUT_DIR=out
 
-.PHONY: $(PDFNAMES) fast all compress clean
+.PHONY: fast all compress clean
 
-fast: dir pdfpc main_handout.pdf copy
+fast: main_handout.pdf
 
-all: dir pdfpc $(PDFNAMES) copy
+all: $(PDFNAMES) $(addsuffix .pdfpc, $(PROJNAME))
+
+compress: $(COMPRESSED)
 
 
 # -dPDFSETTINGS=
 # Filesize: /ebook < /printer < /prepress < /default
-
-compress: fast
-	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dPrinted=false -dBATCH -dPDFSETTINGS=/printer -sOutputFile=main_comp.pdf main_handout.pdf
-
-dir:
-	mkdir -p $(OUT_DIR)/chapters
-
-pdfpc:
-	cp ../template/pdfpcnotes.sty out/pdfpcnotes.sty
+%_compr.pdf: %.pdf
+	gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dPrinted=false -dBATCH -dPDFSETTINGS=/printer -sOutputFile=$@ $<
 
 
-$(PDFNAMES): %.pdf: %.tex
-	latexmk -outdir=$(OUT_DIR) -pdf -use-make -file-line-error -shell-escape $<
+# *.tex and */*.tex are what files %.pdf depends on. Necessary to notice when
+# changes have been made and recomputation is necessary.
+%.pdf: %.tex *.tex */*.tex
+	mkdir -p $(OUT_DIR)/$*/chapters
+	cp ../template/pdfpcnotes.sty $(OUT_DIR)/$*/pdfpcnotes.sty
+	latexmk -outdir=$(OUT_DIR)/$* -pdf -use-make -file-line-error -shell-escape $<
+	cp -v $(OUT_DIR)/$*/$*.pdf . || :
 
 
 # '.' prevents of having to specify the complete filename (as we may be copying multiple files)
 # '||' is similar to a pipe, but only run if an error happened
 # ':' is a posix-'true', preventing it from failing if a file was missing (allowing 'make fast')
-copy:
-	cp -uv $(foreach PDF, $(PDFNAMES),$(OUT_DIR)/$(PDF)) . || :
-	cp -uv $(foreach PDFPC, $(PROJNAME),$(OUT_DIR)/$(PDFPC).pdfpc) . || :
+%.pdfpc: %.pdf
+	cp -v $(OUT_DIR)/$*/$*.pdfpc . || :
+
 
 clean:
 	rm -rf $(OUT_DIR)
+
+
+dist-clean: clean
+	rm -rf $(PDFNAMES)
+	rm -rf $(COMPRESSED)
+	rm -rf $(addsuffix .pdfpc, $(PROJNAME))
