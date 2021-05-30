@@ -153,6 +153,19 @@
     {\Large\color{red}{(TODO: #1)}}
 }
 
+% from: https://tex.stackexchange.com/questions/365231/enclose-a-custom-quote-environment-in-quotes-from-csquotes
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+  \hbox{}\nobreak\hfill #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+  {\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
+
+
 % \definecolor{green1}{RGB}{38, 69, 37} % #264525
 \definecolor{green1}{RGB}{72, 129, 69} % #488145
 % \definecolor{blue1}{RGB}{7, 43, 94} % #072b5e
