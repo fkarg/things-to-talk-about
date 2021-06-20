@@ -1,0 +1,213 @@
+\usepackage{etex}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+\usepackage{pdfpcnotes}
+\usepackage{pdfpages}
+% \usepackage[dvipsnames]{xcolor}
+
+
+% \usepackage{minted}
+% \usemintedstyle{pastie}
+
+
+\usetheme[numbering=counter, progressbar=frametitle, subsectionpage=progressbar]{metropolis}
+
+
+% \date{\today}
+\date{26/27. Juni 2021}
+
+
+\institute{Fachschaftsseminar FSMI 2021}
+% \titlegraphic{\vspace{4cm} \hspace{7cm} \includegraphics[height=2cm]{Logo_INST}}
+\titlegraphic{\vspace{4cm} \hspace{7cm} \Huge\LaTeX}
+
+% attempt to reduce space between tableofcontent items in e.g. sectionpage or agenda
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip0\itemsep}
+  {}
+  {}
+\pretocmd{\beamer@sectionintoc}   {\vskip0\itemsep}{}{}
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{} % <- this one finally works.
+\makeatother
+
+% \AtBeginSection[]
+% {
+% \begin{frame}[c, plain]
+%   \begin{minipage}{22em}
+%     \usebeamercolor[fg]{section title}
+%     \usebeamerfont{section title}
+%
+%     % \insertsectionhead\\[-1ex]
+%     \iftwocols
+%     \begin{multicols}{2}
+%     \tableofcontents[currentsection, hideallsubsections]
+%     \end{multicols}
+%     \else
+%     \tableofcontents[currentsection, hideallsubsections]
+%     \fi
+%
+%     % \usebeamertemplate*{progress bar in section page}
+%   \end{minipage}
+% \end{frame}
+% }
+% sadly, this does not at all compile and throws weird errors
+
+
+\iftwocols
+\AtBeginSection[]
+{
+\begin{frame}[c, plain]
+  \begin{minipage}{22em}
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    % \insertsectionhead\\[-1ex]
+    \begin{multicols}{2}
+    \tableofcontents[currentsection, hideallsubsections]
+    \end{multicols}
+    % \usebeamertemplate*{progress bar in section page} % progress bar
+  \end{minipage}
+\end{frame}
+}
+\else
+
+\AtBeginSection[]
+{
+\begin{frame}[c, plain]
+  \begin{minipage}{22em}
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    % \insertsectionhead\\[-1ex]
+    \tableofcontents[currentsection, hideallsubsections]
+    % \usebeamertemplate*{progress bar in section page}
+  \end{minipage}
+\end{frame}
+}
+\fi
+
+\AtBeginSubsection[]
+{
+\begin{frame}[c,plain]
+  \begin{minipage}{22em}
+    \raggedright
+    \usebeamercolor[fg]{section title}
+    \usebeamerfont{section title}
+    \insertsectionhead\\[-1ex]
+
+    \usebeamertemplate*{progress bar in section page}
+    \par
+    \ifx\insertsubsectionhead\@empty\else%
+      \usebeamercolor[fg]{subsection title}%
+      \usebeamerfont{subsection title}%
+      \vspace{0.5cm}
+      \tableofcontents[sectionstyle=hide/hide,subsectionstyle=show/shaded/hide]
+    \fi
+  \end{minipage}
+\end{frame}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Newcommand definitions
+% - code[1]
+% - backupbegin
+% - backupend
+% - mailto[1]
+% - todo[1]
+% Environments:
+% - codeboxed[1]
+
+
+\newcommand{\code}[1]{
+    \begin{center}
+    \setlength{\fboxrule}{1pt}
+    \setlength{\fboxsep}{8pt}
+        {\fbox{\parbox{0.81\textwidth}{#1}}}
+   \end{center}
+}
+
+\newenvironment{codeboxed}[1]
+        {\begin{minipage}{\linewidth}\begin{center}#1\\[1ex]\begin{tabular}{|p{\textwidth}|}\hline}
+        {\\\hline\end{tabular}\end{center}\end{minipage}}
+
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
+
+\newcommand{\mailto}[1]{
+    \href{mailto:#1}{#1}
+}
+
+\newcommand{\todo}[1]{
+    {\Large\color{red}{(TODO: #1)}}
+}
+
+% \definecolor{green1}{RGB}{38, 69, 37} % #264525
+\definecolor{green1}{RGB}{72, 129, 69} % #488145
+% \definecolor{blue1}{RGB}{7, 43, 94} % #072b5e
+\definecolor{blue1}{RGB}{14, 82, 179} % #0e52b3
+% \definecolor{violet1}{RGB}{58, 38, 68} % #3a2644
+\definecolor{violet1}{RGB}{108, 72, 126} % #6c487e
+% \definecolor{orang1}{RGB}{, , 0} % #663400
+\definecolor{orang1}{RGB}{193, 98, 0} % #c16200
+
+
+\newcommand{\green}[1]{
+    \textcolor{green1}{#1}
+}
+\newcommand{\blue}[1]{
+    \textcolor{blue1}{#1}
+}
+\newcommand{\vio}[1]{
+    \textcolor{violet1}{#1}
+}
+\newcommand{\orang}[1]{
+    \textcolor{orang1}{#1}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% begin document
+
+\begin{document}
+\maketitle
+\addtocounter{framenumber}{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Agenda
+
+\iftwocols
+
+\begin{frame}[c,plain]% {Agenda}
+    \begin{minipage}{22em}
+    \usebeamerfont{section title}
+    \usebeamercolor[fg]{section title}
+    \begin{multicols}{2}
+    \tableofcontents[hideallsubsections]
+%   \tableofcontents[]
+    \end{multicols}
+    \end{minipage}
+\end{frame}
+
+\else
+
+\begin{frame}[c,plain]% {Agenda}
+    \begin{minipage}{22em}
+    \usebeamerfont{section title}
+    \usebeamercolor[fg]{section title}
+    \tableofcontents[hideallsubsections]
+%   \tableofcontents[]
+    \end{minipage}
+\end{frame}
+\fi
