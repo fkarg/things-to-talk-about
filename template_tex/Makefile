@@ -51,3 +51,4 @@ dist-clean: clean
 	rm -rf $(PDFNAMES)
 	rm -rf $(COMPRESSED)
 	rm -rf $(addsuffix .pdfpc, $(PROJNAME))
+	rm -rf _minted-*
