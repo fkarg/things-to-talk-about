@@ -12,7 +12,7 @@ PDFNAMES=$(addsuffix .pdf, $(PROJNAME))
 COMPRESSED=$(addsuffix _compr.pdf, $(PROJNAME))
 OUT_DIR=out
 
-.PHONY: fast all compress clean
+.PHONY: fast all hold compress clean
 
 fast: main_handout.pdf
 
@@ -39,8 +39,19 @@ compress: $(COMPRESSED)
 # '.' prevents of having to specify the complete filename (as we may be copying multiple files)
 # '||' is similar to a pipe, but only run if an error happened
 # ':' is a posix-'true', preventing it from failing if a file was missing (allowing 'make fast')
+# the sed commands transform:
+# - newlines (\\) into actual newlines
+# - (\par) in two newlines
+# - trim whitespaces
 %.pdfpc: %.pdf
 	cp -v $(OUT_DIR)/$*/$*.pdfpc . || :
+	sed -i 's/\\\\/\n/g' $*.pdfpc
+	sed -i 's/\\par/\n\n/g' $*.pdfpc
+	sed -i "s/^[ \t]*//;s/[ \t]*$$//" $*.pdfpc
+
+
+hold: all
+	pdfpc -d 35 main_present.pdf
 
 
 clean:
