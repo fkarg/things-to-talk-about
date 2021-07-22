@@ -51,7 +51,7 @@ compress: $(COMPRESSED)
 
 
 hold: all
-	pdfpc -d 35 main_present.pdf
+	pdfpc --switch-screens --duration=35 main_present.pdf
 
 
 clean:
