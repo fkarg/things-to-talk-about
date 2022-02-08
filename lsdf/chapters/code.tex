@@ -1,0 +1,29 @@
+\section{Code Demo}
+\begin{frame}[fragile]{Using \texttt{minted}}
+ %set the langauge in these brackets after {minted}{LANGUAGE SHORTHAND}
+    \inputminted{c}{code/example.c}
+\end{frame}
+
+\begin{frame}[fragile]{Using \texttt{minted}}
+ %set the langauge in these brackets after {minted}{LANGUAGE SHORTHAND}
+    \begin{minted}{c}
+    int main() {
+      printf("hello, world");
+      return 0;
+    }
+    \end{minted}
+    \mintinline{latex}{Can also typeset $code$ inline. Yay to \LaTeX{}!}
+\end{frame}
+
+\begin{frame}[c,fragile]{verbatim 2}
+    \begin{verbatim}
+    this is a test for the verbatim
+    environment, so let's do this
+    \end{verbatim}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{verbatim}
+    \verb!test!
+\end{frame}
+

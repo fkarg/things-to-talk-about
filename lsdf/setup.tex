@@ -7,20 +7,21 @@
 % \usepackage[dvipsnames]{xcolor}
 
 
-\usepackage{minted}
-% \usemintedstyle{pastie}
+% \usepackage[outputdir=\detokenize{~/Coding/things-to-talk-about/lsdf/out/}]{minted}
+\usepackage[outputdir={\detokenize{out/main_handout}}]{minted}
+\usemintedstyle{pastie}
 
 
 \usetheme[numbering=counter, progressbar=frametitle, subsectionpage=progressbar]{metropolis}
 
 
-\date{February 16th, 2022}
+\date{Wednesday, February 16th, 2022}
 % \date{12. Juli 2019}
 
 
 \institute{Steinbuch Centre for Computing (SCC)}
 % \titlegraphic{\vspace{4cm} \hspace{7cm} \includegraphics[height=2cm]{Logo_KIT}}
-\titlegraphic{\vspace{4cm} \hspace{8cm} \includegraphics[height=2.5cm]{Logo_KIT}}
+\titlegraphic{\vspace{3.8cm} \hspace{8.5cm} \includegraphics[height=2.5cm]{Logo_KIT}}
 
 % attempt to reduce space between tableofcontent items in e.g. sectionpage or agenda
 \makeatletter
@@ -91,7 +92,7 @@
 {
 \begin{frame}[c,plain]
   % \begin{minipage}{22em}
-  \begin{minipage}{33em}
+  \begin{minipage}{32em}
     \raggedright
     \usebeamercolor[fg]{section title}
     \usebeamerfont{section title}

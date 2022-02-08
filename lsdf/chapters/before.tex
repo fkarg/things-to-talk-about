@@ -1,31 +1,58 @@
 \section{What is the LSDF-Portal}
 
-\begin{frame}[standout]
-    \Large
-    Live Demo!
+\begin{frame}[c]{TODOS}
+    \todo{Write mail to Sundermann: Deployment (version updates, installs, constrain to django3} \\
+    \todo{Write Changelog} \\
+    \todo{Implement last features: publications sortable, command with mail on end\_date near} \\
 \end{frame}
 
 
 \subsection{Overview}
-
-\begin{frame}[c]
-    Storage management for 18PB for research projects \\
-    Based on Python/django (more on that later) \\
-    available at: lsdf.kit.edu \\
-    (my test server: lsdf.fkarg.de with user:test and admin4:lsdf) \\
-\end{frame}
-
-\subsection{Project Lifecycle}
-\begin{frame}[c]
+\begin{frame}[c]{What is the Large Scale Data Facility?}
+    \large
     \begin{itemize}[<+(1)->]
-        \item Project Creation -> NEW
-        \item Admins take a look -> PENDING
-        \item granted -> APPROVED
-        \item not granted -> REJECTED
-        \item done -> EXPIRED/DELETED
+        \item Cloud-based storage for scientific research
+        \item About 18 PetaByte (1PB = 1000 TB)
+        \item All commonly used Protocols
+        \item Direct Integration with e.g. HoReKa HPC-systems
+        \item Primarily for KIT, but also worldwide partners and Baden-Württemberg in general
+        \item LSDF-Portal: {\em administration} of storage projects
     \end{itemize}
 \end{frame}
 
+
+\begin{frame}[c,fragile]{What is the LSDF-Portal?}
+    \large
+    \begin{itemize}[<+(1)->]
+        \item LSDF-Portal: {\em administration} of storage projects
+            \begin{itemize}[<+(1)->]
+                \item Based on Python/Django (more on that later)
+            \end{itemize}
+        \item Research groups can request storage for timeframes
+            \begin{itemize}[<+(1)->]
+                \item And request extensions, should that not suffice
+            \end{itemize}
+        \item Internally available at \url{https://lsdf.kit.edu}
+        \item My test instance available at \url{https://lsdf.fkarg.de}
+        \item Play around with \verb!user:test! or \verb!admin4:lsdf! (both admin)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Project Lifecycle}
+    \includegraphics[height=0.9\textheight]{lsdf_states}
+\end{frame}
+
+
+
+\addtocounter{framenumber}{1}
+\begin{frame}[standout]
+    \Huge
+    Live Demo!
+\end{frame}
+
+% \begin{frame}[c]
+%     \todo{tell story: maths requesting storage for digitalization?}
+% \end{frame}
 \subsection{Project Creation}
 
 \begin{frame}[c]{First Login}

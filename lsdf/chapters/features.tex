@@ -1,19 +1,19 @@
 \section{Project Results}
 
-\subsection{Upgrade Dependencies}
-
-\begin{frame}[c]
-    From Django 2 to Django 3 \\
-    (Django 4 released during the project, has been decided to go to 3 in production first)
-\end{frame}
+% \subsection{Upgrade Dependencies}
+% 
+% \begin{frame}[c]
+%     From Django 2 to Django 3 \\
+%     (Django 4 released during the project, has been decided to go to 3 in production first) \\
+%     Now requires \mintinline{python}{DEFAULT_AUTO_FIELD = "django.db.models.AutoField"}
+% \end{frame}
 
 \subsection{Proper Logging}
 
-\pic{Logging Now}{31}
-
-\begin{frame}[c]{Logging Now}
+\begin{frame}[c]{Changes to Logging}
     \large
     \begin{itemize}[<+(1)->]
+        \item Logging used to be over individual `print` statements
         \item Properly defined Logging levels (debug, info, warn, error, critical)
         \item Logging to console, syslog and file
         \item Differing formatter for console and other (timestamps, ...)
@@ -21,7 +21,19 @@
     \end{itemize}
 \end{frame}
 
-\subsection{Attempt to automatically generate documentation}
+\begin{frame}[c]{Logging Before: Example} 
+    \todo{Screenshot: Logging before, Optional}
+\end{frame}
+
+\pic{Logging Now: Example}{33}
+
+\subsection{Automatically generate Documentation}
+
+\begin{frame}[c]{Why is this worth trying?} 
+    \begin{itemize}[<+(1)->]
+        \item 
+    \end{itemize}
+\end{frame}
 
 \begin{frame}[c]{Automatically Generate Documentation}
     \begin{multicols}{2}
@@ -38,13 +50,21 @@
     \end{multicols}
 \end{frame}
 
-\subsection{Selecting a DFG board}
+\subsection{What Research is the Storage used for?}
 
-\begin{frame}[c]{Excerpt of DFG subject areas}
-    \includegraphics[height=\textheight]{Selection_032}
+\begin{frame}[c]{What Research is the Storage used for?}
+    \begin{multicols}{2}
+    \includegraphics[width=0.5\textwidth]{Selection_032}
+    \large
+        \begin{itemize}[<+(1)->]
+            \item We want to know more about our users
+            \item This includes affiliation of research projects
+            \item Good separation in subject areas from 'Deutsche Forschungsgesellschaft'
+        \end{itemize}
+    \end{multicols}
 \end{frame}
-\pic{Selection of DFG Subject Area upon Project Creation}{10}
 
+\pic{Selection of DFG Subject Area upon Project Creation}{10}
 
 \begin{frame}[c]{Selection of DFG Discipline}
     \includegraphics[width=\textwidth]{select_discipline}
@@ -57,36 +77,31 @@
 \end{frame}
 
 
-\begin{frame}[c]{Code}
-    \todo{code of change function with request}
-    \todo{maybe from other side as well?}
+\begin{frame}[c,fragile]{Code Requesting Fields for Boards}
+    \footnotesize
+    \inputminted[linenos=true]{javascript}{code/board_request.js}
 \end{frame}
 
-%     \$("#id_board").change(function () \{
-%       /* on change of board field, request new data for `field` field */
-%       var url = \$("#form").attr("data-fields-url");
-%       var board = \$(this).val();
-% 
-%       \$.ajax(\{
-%         url: url,
-%         data: \{
-%           'board': board
-%         \},
-%         success: function (data, textStatus, jqXHR) \{
-%           \$("#id_field").html(data);
-%         \}
-%       \});
-% 
-%     \});
 
+\begin{frame}[c,fragile]{Backend answering with available Fields}
+\footnotesize
+    \begin{minted}[linenos]{python}
+## urls.py
+path('ajax/fields/', views.view_science_fields, name="ajax_load_fields"),
 
-% \begin{frame}[c]
-%     Next project: implement analytics page showing used capacity by area. \\
-%     \todo{Picture of callback from page to select available from database} \\
-%     \todo{Show parts of the code}
-% \end{frame}
+## views.py
+def view_science_fields(request):
+    b_pk = request.GET.get('board')  # we get the pk of the selected board
+    if b_pk:  # select available Fields from this Board
+        fields = Science_Field.objects.filter(board__pk=b_pk) 
+        return render(request, 'dropdown_list_options.html',
+                      {'options': fields})
+    return render(request, 'dropdown_list_options.html',
+                  {'options': Science_Field.objects.none()})
+\end{minted}
+\end{frame}
 
-\subsection{Diff to schema in database}
+\subsection{Diff csv to DFG schema in database}
 
 \begin{frame}[c]{The DFG schema changes frequently}
     \large
@@ -97,10 +112,36 @@
         \item Not clear how much (probably not a whole lot)
     \end{itemize}
     \pause
-    So I implemented a command to compare any csv to what is currently in the database:
-    \todo{code listing}
+    So I implemented a command to compare any csv to what is currently in the
+    database: \mintinline{bash}{manage.py dfg_schema_diff}
 \end{frame}
 
+
+% \begin{frame}[fragile]{Usage of \texttt{dfg_schema_diff}}
+\begin{frame}[fragile]{Usage of \texttt{dfg\_schema\_diff}}
+    \scriptsize
+\begin{verbatim}
+usage: manage.py dfg_schema_diff [-h] [--locale LOCALE] [--columns COLUMNS]
+                     ...
+                     FILE
+
+Show difference from given file schema to DFG schema in database. By default,
+ignores the now deprecated hierarchy level 1. ...
+
+positional arguments:
+  FILE                  Path to dfg_systematic.csv
+
+options:
+  -h, --help            show this help message and exit
+  --locale LOCALE       Set the language of the name column to select. Can correctly select
+                        both '<locale>' and 'prefLabel@<locale>' columns. (Default: 'en')
+  --columns COLUMNS     Dictionary mapping columns (numbers) to expected values "level" (in
+                        the hierarchy, category: 0, deprecated/ignored: 1, board: 2, field:
+                        3), "notation" (e.g. 101-27), and locale translations, e.g. "en"
+                        (double quotes are important!). Defaults to auto.
+  ...                   ...
+\end{verbatim}
+\end{frame}
 
 % \subsection{Rename Models}
 % 
@@ -130,18 +171,11 @@
 
 \subsection{Extension Requests}
 
+\begin{frame}[c]
+    WHY Extension Requests
+\end{frame}
+
 \begin{frame}[c]{Extension Requests}
     Much-requested feature.
     \todo{Overview of newly introduced routes, views, forms, models and relations}
 \end{frame}
-
-
-
-
-% \subsection{Relative to Absolute Imports}
-% 
-% \begin{frame}[c]
-%     Very early on, succeeded
-% \end{frame}
-
-
