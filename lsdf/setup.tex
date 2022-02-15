@@ -5,10 +5,11 @@
 \usepackage{pdfpcnotes}
 \usepackage{pdfpages}
 % \usepackage[dvipsnames]{xcolor}
+\usepackage{arydshln}
 
 
 % \usepackage[outputdir=\detokenize{~/Coding/things-to-talk-about/lsdf/out/}]{minted}
-\usepackage[outputdir={\detokenize{out/main_handout}}]{minted}
+% \usepackage[outputdir={\detokenize{out/main_handout}}]{minted}
 \usemintedstyle{pastie}
 
 
@@ -220,3 +221,6 @@
     \includegraphics[width=\textwidth,trim=0 0 0 3,clip]{Selection_0#2}
 \end{frame}
 }
+
+\newcommand{\p}[1]{{\color{ForestGreen}+#1}}
+\newcommand{\m}[1]{{\color{red}-#1}}

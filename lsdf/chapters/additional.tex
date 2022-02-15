@@ -1,4 +1,5 @@
 
+\addtocounter{framenumber}{1}
 \begin{frame}[standout]
     \Huge
     End
@@ -7,13 +8,94 @@
 \appendix
 \backupbegin
 
+\section{Statistics}
 
 
-\begin{frame}[c]{Additional slide}
-    without numbering, does not show up in normal numbers
+\begin{frame}[c]{LOC by Author}
+    \includegraphics[height=\textheight]{lines_of_code_by_author}
+\end{frame}
+
+\begin{frame}[c]{Commits by Author}
+    \includegraphics[height=\textheight]{commits_by_author}
+\end{frame}
+
+\pic{Recent Activity (Commits by Week)}{34}
+
+
+\begin{frame}[c,fragile]{LOC stats: Before}
+    \large
+    \begin{tabular}{l:r:r:r:r:r}
+        Language & Files & Lines & Code & Comments & Blanks \\ \hline
+CSS           &        28 &      19144 &      17235 &        284 &       1625 \\
+JavaScript    &        27 &      63499 &      43096 &      13725 &       6678 \\ \hdashline
+Python        &        34 &       1812 &       1510 &         56 &        246 \\
+SVG           &        14 &         14 &         14 &          0 &          0 \\ \hdashline
+HTML          &        10 &        938 &        838 &         30 &         70 \\
+|- CSS        &         1 &        312 &        282 &         28 &          2 \\
+|- JavaScript &         5 &        155 &        126 &         13 &         16 \\ \hdashline
+Total         &       122 &      86008 &      62693 &      14627 &       8688 \\
+    \end{tabular} \\
+    \scriptsize \newline (The numbers don't quite add up, because I omitted e.g. Configs, Markdown, ...)
+\end{frame}
+
+\begin{frame}[c,fragile]{LOC stats: After}
+    \large
+    \begin{tabular}{l:r:r:r:r:r}
+        Language & Files & Lines & Code & Comments & Blanks \\ \hline
+        CSS            &       28   &    19162    &   17248   &      284    &    1630 \\
+        JavaScript     &       27   &    63499    &   43096   &    13725    &    6678 \\ \hdashline
+        Python         &       48   &     3078    &    2485   &      160    &     434 \\
+        SVG            &       14   &       14    &      14   &        0    &       0 \\ \hdashline
+        HTML           &       15   &     1231    &    1107   &       39    &      85 \\
+        |- CSS         &        1   &      312    &     282   &       28    &       2 \\
+        |- JavaScript  &        7   &      244    &     202   &       21    &      21 \\ \hdashline
+        Total          &      134   &    87055    &   63960   &    14245    &    8850 \\
+    \end{tabular} \\
+    \scriptsize \newline (The numbers don't quite add up, because I omitted e.g. Configs, Markdown, ...)
 \end{frame}
 
 
+\begin{frame}[c,fragile]{LOC stats: Diff}
+    \large
+    \begin{tabular}{l:r:r:r:r:r}
+        Language & Files & Lines & Code & Comments & Blanks \\ \hline
+        CSS            &        0   &    \p{18}   &   \p{13}  &        0    &    \p{5} \\
+        JavaScript     &        0   &        0    &       0   &        0    &       0  \\ \hdashline
+        Python         &    \p{14}  &  \p{1266}   &  \p{975}  &   \p{104}   &  \p{188} \\
+        SVG            &        0   &        0    &       0   &        0    &       0  \\ \hdashline
+        HTML           &     \p{5}  &   \p{293}   &  \p{269}  &     \p{9}   &   \p{15} \\
+        |- CSS         &        0   &        0    &       0   &        0    &       0  \\
+        |- JavaScript  &     \p{2}  &    \p{89}   &   \p{76}  &     \p{8}   &    \p{5} \\ \hdashline
+        Total          &    \p{12}  &  \p{1047}   & \p{1267}  &   \p{382}   &  \p{162} \\
+    \end{tabular} \\
+    \scriptsize \newline (The numbers don't quite add up, because I omitted e.g. Configs, Markdown, ...)
+\end{frame}
+
+\section{More Screenshots}
+\subsection{Project Approval}
+\pic{Project Pending}{14}
+\pic{State Change Message}{15}
+\pic{Project Approved}{17}
+\pic{State Change Message}{16}
+
+\subsection{Requesting More Storage}
+\pic{Extension Requests: The Project Needs to be Approved}{18}
+\pic{Timeframe Extension Request View}{19}
+% \pic{lsdf.kit.edu/extension/timeframe/9/create/}{19}
+\pic{Capacity Extension Request View}{20}
+\pic{Filled out Capacity Extension}{21}
+\pic{Extension System Message}{22}
+
+\begin{frame}[c]{Projects Admin View}
+                           % trim=left bottom right top, clip
+    \includegraphics[width=\textwidth,trim=0 0 0 150,clip]{Selection_023}
+\end{frame}
+
+% 24 and 25 don't exist
+\pic{Extension Request Overview}{26}
+\pic{Approving Request}{27}
+\pic{System Message showing Extension Approval}{28}
+\pic{Increased Capacity from User View}{29}
+
 
 \backupend
-

@@ -29,7 +29,7 @@ compress: $(COMPRESSED)
 
 # *.tex and */*.tex are what files %.pdf depends on. Necessary to notice when
 # changes have been made and recomputation is necessary.
-%.pdf: %.tex *.tex */*.tex
+%.pdf: %.tex *.tex */*.tex code/* img/*
 	mkdir -p $(OUT_DIR)/$*/chapters
 	cp ../template/pdfpcnotes.sty $(OUT_DIR)/$*/pdfpcnotes.sty
 	mogrify -format jpg img/*.bmp
