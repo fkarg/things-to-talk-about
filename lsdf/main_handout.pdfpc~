@@ -1,0 +1,5 @@
+[notes]
+### 6
+debug, info, warn, error, critical
+No timestamp for console (mostly used for debug) but in files and syslog
+Colors available in console but not in txt-file

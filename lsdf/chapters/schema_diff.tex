@@ -1,0 +1,45 @@
+\subsection{Diff CSV to DFG Schema in Database}
+
+\begin{frame}[c]{Problem: The DFG schema changes frequently}
+    \large
+    \begin{itemize}[<+(1)->]
+        \item We have the current schema in our database
+        \item The DFG schema changes every four years
+        \item It was last changed in 2020
+        \item So it'll change again in two years
+        \item The database will extensively references current schema
+        \item Not clear how much will change (probably not a whole lot)
+    \end{itemize}
+    \pause
+    We implemented a command to compare any csv to the schema currently in the
+    database: \mintinline{bash}{manage.py dfg_schema_diff}
+\end{frame}
+
+
+% \begin{frame}[fragile]{Usage of \texttt{dfg_schema_diff}}
+\begin{frame}[fragile]{Usage of \texttt{dfg\_schema\_diff}}
+    \scriptsize
+\begin{verbatim}
+usage: manage.py dfg_schema_diff [-h] [--locale LOCALE] [--columns COLUMNS]
+                     ...
+                     FILE
+
+Show difference from given file schema to DFG schema in database. By default,
+ignores the now deprecated hierarchy level 1. ...
+
+positional arguments:
+  FILE                  Path to dfg_systematic.csv
+
+options:
+  -h, --help            show this help message and exit
+  --locale LOCALE       Set the language of the name column to select. Can correctly select
+                        both '<locale>' and 'prefLabel@<locale>' columns. (Default: 'en')
+  --columns COLUMNS     Dictionary mapping columns (numbers) to expected values "level" (in
+                        the hierarchy, category: 0, deprecated/ignored: 1, board: 2, field:
+                        3), "notation" (e.g. 101-27), and locale translations, e.g. "en"
+                        (double quotes are important!). Defaults to auto.
+  ...                   ...
+\end{verbatim}
+\end{frame}
+
+

@@ -2,24 +2,13 @@
 
 % \begin{frame}[c]{TODOS}
 %     \todo{Write mail: Deployment (version updates, installs, constrain to django3} \\
+%       Test if updates to Project details require lessening timeframe. Write command?
 %     \todo{Write Changelog} \\
 %     \todo{Implement last features: publications sortable, command with mail on end\_date near} \\
 % \end{frame}
 
 
 \subsection{Overview}
-\begin{frame}[c]{What is the Large Scale Data Facility?}
-    \large
-    \begin{itemize}[<+(1)->]
-        \item Cloud-based storage for scientific research
-        \item About 18 PetaByte (1PB = 1000 TB)
-        \item All commonly used Storage Protocols
-        \item Direct Integration with e.g. HoReKa HPC-systems
-        \item For KIT, Baden-Württemberg, and worldwide partnered researchers
-        \item LSDF-Portal: {\em administration} of storage projects
-    \end{itemize}
-\end{frame}
-
 
 \begin{frame}[c,fragile]{What is the LSDF-Portal?}
     \large
@@ -28,24 +17,30 @@
             \begin{itemize}[<+(1)->]
                 % \item Based on Python/Django (more on that later)
                 \item Research groups can request storage capacity for research projects
-                \item Allows for structured interaction with admins
-                \item Transparent communication of project status
+                \item Allows for {\em structured interaction} with admins
+                \item {\em Transparent communication} of project status
+                \item Created and improved over multiple SCC-internships
             \end{itemize}
-        \item Internally available at \url{https://lsdf.kit.edu}
-        \item Test instance available at \url{https://lsdf.fkarg.de}
-            \begin{itemize}[<+(1)->]
-                \item Play around with \verb!user:test! or \verb!admin4:lsdf! (both admin)
-                \item (Cannot properly route from within KIT for some reason)
-            \end{itemize}
+        % \item Internally available at \url{https://lsdf.kit.edu}
+        \item Internally available at: \url{https://www.lsdf.kit.edu/os/storageprojects/}
+        \item Service description: \url{https://www.scc.kit.edu/dienste/11228.php}
+        % \item Test instance available at \url{https://lsdf.fkarg.de}
+        %     \begin{itemize}[<+(1)->]
+        %         \item Play around with \verb!user:test! or \verb!admin4:lsdf! (both admin)
+        %         \item (Cannot properly route from within KIT for some reason)
+        %     \end{itemize}
     \end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Project Lifecycle}
-    \begin{center}
-    \includegraphics[height=0.9\textheight]{lsdf_states}
-    \end{center}
+    \includegraphics[height=0.9\textheight,center]{lsdf_states}
+    % \todo{flash again on extension requests with them highlighted}
 \end{frame}
 
+% \begin{frame}[c]
+%     \todo{tell story: maths requesting storage for digitalization?}
+% \end{frame}
+\subsection{Screenshots}
 
 
 \addtocounter{framenumber}{1}
@@ -54,12 +49,8 @@
     Live Demo!
 \end{frame}
 
-% \begin{frame}[c]
-%     \todo{tell story: maths requesting storage for digitalization?}
-% \end{frame}
-\subsection{Project Creation}
 
-\begin{frame}[c]{First Login}
+\begin{frame}[c]{After First Login}
                            % trim=left bottom right top, clip
     \includegraphics[width=\textwidth,trim=0 0 0 3,clip]{Selection_006}
 \end{frame}
@@ -100,5 +91,7 @@
 \end{frame}
 
 \begin{frame}[c]{Storage Use Histogram}
-    \todo{Screenshot: Histogram of storage usage. } \\
+    \begin{center}
+    \includegraphics[height=\textheight]{lsdf-portal-usage}
+    \end{center}
 \end{frame}

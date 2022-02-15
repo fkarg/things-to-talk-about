@@ -1,0 +1,62 @@
+\subsection{Attempt to properly modularize PersonForm}
+\begin{frame}[c]{Motivation for PersonForm abstraction}
+    \begin{multicols}{2}
+    \tiny
+        \phantom{M}
+    \large
+        \begin{itemize}[<+(1)->]
+            \item Boilerplate: strong indicator for bad code quality!
+            \item Redundant!
+            \item Prone to Bugs!
+            \item Distracts from meaning!
+            \item Not Flexible!
+            \item Hard to modify!
+        \end{itemize}
+    \tiny
+    \phantom{M}
+    \inputminted[linenos,xleftmargin=2em]{python}{code/personform.py}
+    \end{multicols}
+\end{frame}
+
+%     \begin{frame}[c]{PersonForm and Views}
+%     So I created a ModelForm for Person.
+%     And a Personformset.
+%     And startet to integrate it in the OrderSimpleForm
+%     \end{frame}
+
+\begin{frame}[c]{Intermediate Results}
+    \begin{multicols}{2}
+        \tiny
+        \inputminted[linenos]{python}{code/personforms.py}
+        \normalsize
+        \begin{itemize}[<+(1)->]
+            \item Abstraction to one dedicated PersonForm
+            \item PersonFormSet can have arbitrarily many Persons (was only five)
+            \item Simplifies implementation in View
+            \item Difficult to propagate ValidationErrors properly
+            \item Would have deleted about 300 lines of boilerplate
+            % \item Problem: A view is supposed to show only a single Form
+                % \item Problem: Took a long time to implement
+        \end{itemize}
+    \end{multicols}
+\end{frame}
+
+\begin{frame}[c]{Reasons for Failure}
+    % Managed to get quite far, very good (deep) learning example, and absolutely
+    % possible. just requires some more time than expected.
+    % Nags me that it's not modular yet. Some day.
+    \large
+    \begin{itemize}[<+(1)->]
+        \item Nesting of \mintinline{python}{Forms} is \textbf{not} supported (\mintinline{python}{owner} within \mintinline{python}{OrderSimpleForm})
+        \item Particularly with the many assumptions and automated parts of \mintinline{python}{ModelForm}s
+        % \item Need to manually call all steps from other \mintinline{python}{ModelForm}
+        \item Manually register fields for \mintinline{python}{ValidationErrors}
+        \item Manually put in values for Validation (from \mintinline{python}{PersonFormSet})
+        \item Manually take values out to save new Models
+    \end{itemize}
+    \pause
+    Nothing impossible, but requires a lot of intricate details to get right.
+    \pause
+    We decided to instead implement something else.
+\end{frame}
+

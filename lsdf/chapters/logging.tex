@@ -1,0 +1,20 @@
+\subsection{Proper Logging}
+
+\begin{frame}[c]{Changes to Logging}
+    \large
+    \begin{itemize}[<+(1)->]
+        \item Used to be done in inconsistent formats with \mintinline{python}{print}-statements
+        \item Traceback of Crash wasn't saved \MVRightarrow\ no information to debug
+        \item Good to get overview of Codebase and touch many files
+        \item Now: Properly defined Logging levels (debug, info, warn, ...)
+        \item Now: Option to log messages in console, syslog and local file
+        \item Now: Formatting on File and Console differ (timestamp, colors)
+        \item Now: Rotating files: Keep last N days, overwrite after
+    \end{itemize}
+    \pnote{logging-levels: dbg, info, warn, error, critical}
+    \pnote{no timestamp for console, but in files and syslog}
+    \pnote{console mostly used for debugging}
+    \pnote{Colors available in console but not in txt-file}
+\end{frame}
+
+\pic{Logging Now: Example}{33}
