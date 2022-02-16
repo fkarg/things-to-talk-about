@@ -70,8 +70,8 @@
 \begin{frame}[c,fragile]{Backend: Answering With Available Fields}
 \footnotesize
     \begin{minted}[linenos]{python}
-## urls.py      # path(route: str, view: callable, name: str)
-path(route='ajax/fields/', view=view_science_fields, name="ajax_load_fields")
+## urls.py      # path(route: str, view: callable)
+path(route='ajax/fields/', view=view_science_fields)
 
 ## views.py
 def view_science_fields(request: HTTPRequest):

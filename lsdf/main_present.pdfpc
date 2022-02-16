@@ -1,49 +1,41 @@
 [notes]
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
+### 25
 logging-levels: dbg, info, warn, error, critical
 no timestamp for console, but in files and syslog
 console mostly used for debugging
 Colors available in console but not in txt-file
-### 26
-logging-levels: dbg, info, warn, error, critical
-no timestamp for console, but in files and syslog
-console mostly used for debugging
-Colors available in console but not in txt-file
-### 26
-logging-levels: dbg, info, warn, error, critical
-no timestamp for console, but in files and syslog
-console mostly used for debugging
-Colors available in console but not in txt-file
-### 30
+### 29
 We have mostly HTML-Endpoints
-### 30
+### 29
 We have mostly HTML-Endpoints
-### 30
+### 29
 We have mostly HTML-Endpoints
-### 30
+### 29
+We have mostly HTML-Endpoints
+### 29
 We have mostly HTML-Endpoints

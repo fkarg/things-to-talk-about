@@ -2,14 +2,19 @@
 
 \begin{frame}[c]{Changes to Logging}
     \large
+    Situation:
     \begin{itemize}[<+(1)->]
         \item Used to be done in inconsistent formats with \mintinline{python}{print}-statements
         \item Traceback of Crash wasn't saved \MVRightarrow\ no information to debug
         \item Good to get overview of Codebase and touch many files
-        \item Now: Properly defined Logging levels (debug, info, warn, ...)
-        \item Now: Option to log messages in console, syslog and local file
-        \item Now: Formatting on File and Console differ (timestamp, colors)
-        \item Now: Rotating files: Keep last N days, overwrite after
+    \end{itemize}
+
+    Now:
+    \begin{itemize}[<+(1)->]
+        \item Properly defined Logging levels (debug, info, warn, ...)
+        \item Option to log messages in console, syslog and local file
+        % \item Formatting on File and Console differ (timestamp, colors)
+        % \item Rotating files: Keep last N days, overwrite after
     \end{itemize}
     \pnote{logging-levels: dbg, info, warn, error, critical}
     \pnote{no timestamp for console, but in files and syslog}
