@@ -1,0 +1,21 @@
+\begin{table}[!ht]
+    \small
+    \begin{tabular}{l|c|cccccccccccccccc}
+        & mean & aero & bag & cap & car & chair & ear & guitar & knife & lamp & laptop & motor & mug & pistol & rocket & skate & table \\
+        & & & & & & & phone & & & & & & & & & board & \\ \hline
+        \# shapes & & 2690 & 76 & 55 & 898 & 3758 & 69 & 787 & 392 & 1547 & 451 & 202 & 184 & 283 & 66 & 152 & 5271 \\ \hline
+        Wu \cite{wu2014interactive} & - & 63.2 & - & - & - & 73.5 & - & - & - & 74.4 & - & - & - & - & - & - & 74.8 \\
+        Yi \cite{yi2016scalable} & 81.4 & 81.0 & 78.4 & 77.7 & \textbf{75.7} & 87.6 & 61.9 & \textbf{92.0} & 85.4 & \textbf{82.5} & \textbf{95.7} & \textbf{70.6} & 91.9 & \textbf{85.9} & 53.1 & 69.8 & 75.3 \\ \hline
+        3DCNN & 79.4 & 75.1 & 72.8 & 73.3 & 70.0 & 87.2 & 63.5 & 88.4 & 79.6 & 74.4 & 93.9 & 58.7 & 91.8 & 76.4 & 51.2 & 65.3 & 77.1 \\
+        Ours & \textbf{83.7} & \textbf{83.4} & \textbf{87.7} & \textbf{82.5} & 74.9 & \textbf{89.6} & \textbf{73.0} & 91.5 & \textbf{85.9} & 80.8 & 95.3 & 65.2 & \textbf{93.0} & 81.2 & \textbf{57.9} & \textbf{72.8} & \textbf{80.6}
+    \end{tabular}
+    \caption{
+        \textbf{Segmentation results on ShapeNet part dataset.} The metric used is mIoU(\%) on points.
+        As a baseline, we compare with a 3D fully convolutional
+        network pipeline proposed by us as well as two
+        traditional methods \cite{wu2014interactive} and
+        \cite{yi2016scalable}.
+        We observe that PointNet achieved a new state-of-the-art
+        in mIoU. Table from \cite{qi2017pointnet}.
+    } \label{table:shapenet}
+\end{table}

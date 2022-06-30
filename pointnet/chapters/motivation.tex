@@ -1,0 +1,52 @@
+% \section{Motivation}
+% \begin{frame}[c]{The Need for 3D Deep Learning}
+%     \large
+%     \input{figures/perception.tex}
+%     \Large
+%     \vspace{1em}
+%     A number of emerging 3D applications shape the need for 3D deep learning.
+%     \pnote{
+%         Es entstehen viele Anwendungen die Wahrnehmung  \\
+%         oder Interaktion in 3D benötigen.
+%         \par
+%         - viele Anwendungen im 3D bereich entstehen \\
+%         - brauchen Wahrnehmung oder Interaktion in 3D \\
+%         - um diese zu bedienen: hoher bedarf \\
+%         - spezifisch auf 3D zugeschnitten \\
+%         - Erster: PointNet \\
+%     }
+% \end{frame}
+
+
+\section{Representation}
+\begin{frame}[c]{Common Representations of 3D Data}
+    \input{figures/representations.tex}
+    \Large
+    \vspace{1em}
+    Contrary to 2D, 3D has many different popular representations.
+    \pnote{Auszug an Beispielen}
+\end{frame}
+
+
+\begin{frame}[c]{Canonical Representation: Point Cloud}
+    \large
+    \begin{columns}
+        \column{0.32\textwidth}
+        \begin{itemize}
+            \item Point cloud is close to \textbf{raw depth sensor data}
+            \item Point cloud is \textbf{canonical} (easy conversion from and to other representations)
+        \end{itemize}
+        \color{ocre}
+        \normalsize
+        \vspace{2em}
+        Individual figures from CVPR presentation to \cite{qi2017pointnet}
+        \column{0.68\textwidth}
+        \includegraphics[height=0.75\textheight]{canonical}
+    \end{columns}
+    \pnote{
+        - Am nächsten zu ursprünglichen Tiefendaten\\
+        - Kanonische Form: andere lassen sich einfach umwandeln \\
+        Allerdings: wenig Arbeit zu Point Cloud Features
+    }
+\end{frame}
+

@@ -1,0 +1,18 @@
+\begin{table}[!ht]
+    \centering
+    % \resizebox{0.3\textwidth}{!}{%
+    \begin{tabular}{l|c}
+        Transform & accuracy \\ \hline \hline
+        none & 87.1 \\ \hline
+
+        input (3x3) & 87.9 \\
+        feature (64x64) & 86.9 \\
+        feature (64x64) + reg. & 87.4 \\ \hline
+
+        both & \textbf{89.2}
+    \end{tabular}% }
+    \caption{
+        \textbf{Effects of input feature transforms.} Based on overall classification accuracy on the ModelNet40 \cite{wu20153d} test set.
+        Table from \cite{qi2017pointnet}.
+    } \label{table:transforms}
+\end{table}

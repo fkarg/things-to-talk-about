@@ -1,0 +1,79 @@
+\section{Related Work}
+\begin{frame}[c]{Point Cloud Features}
+    \large
+    \begin{figure}
+        \captionsetup[figure]{labelformat=empty}
+        % \captionsetup[subfigure]{labelformat=empty}
+        \small
+        \input{figures/features.tex}
+        \caption{Overview from \url{https://github.com/PointCloudLibrary/pcl/wiki/Overview-and-Comparison-of-Features}}
+    \end{figure}
+    Most existing point cloud features are \textbf{handcrafted for specific tasks}. \\
+    \pnote{
+        Die meisten zuvor existierenden Features sind \\
+        nur für bestimmte Aufgaben. \\
+        Skaliert sehr schlecht für neue Aufgaben.
+        \par
+        Die Tabelle listet ein paar davon.
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Conversion to Other Representations}
+    \begin{columns}
+        \column{0.1\textwidth}
+        \column{0.6\textwidth}
+        \includegraphics[height=0.75\textheight]{conversion}
+        \column{0.3\textwidth}
+        \color{ocre}
+        Figures from:
+        \begin{itemize}
+                \color{ocre}
+            \item Bunnies: CVPR presentation to \cite{qi2017pointnet} \\
+            \item MVCNN: \cite{li2019angular} \\
+                % \item 3D-CNN-image: \cite{roy2019ecnn} \\
+            \item 3D-CNN: Supplemental to \cite{qi2017pointnet} \\
+            \item Mesh-Net: \cite{feng2019meshnet} \\
+        \end{itemize}
+    \end{columns}
+    \pnote{
+        Es gibt bereits Arbeiten auf Point Cloud. \\
+        \par
+        Allerdings wandeln diese Punktwolken erst \\
+        in andere Darstellungen um, und verwenden \\
+        anschließend bereits existierende Architekturen.
+    }
+\end{frame}
+
+
+% \begin{frame}[c]{Learning on Unordered Sets}
+%
+%     A point cloud is an unordered set of vectors from the data structure point of
+%     view. Most works in deep learning however look at regular input structures like
+%     ordered sequences of images, volumes or points. Unordered point clouds are
+%     rarely considered. One recent work \cite{vinyals2015order} attempts to impose
+%     order on unordered input sets via the attention mechanism. This work focuses on
+%     generic sets and NLP applications, which lacks the characteristics of geometry
+%     in the sets.
+%
+%     \todo{Order Matters! Find Visualization .... none in paper}
+%
+%     \todo{alternatively, exclude from presentation}
+% \end{frame}
+
+
+\begin{frame}[c]
+    \LARGE
+    \begin{centering}
+        Research Question: \\
+        \vspace{1cm}
+        Can we achieve effective \textbf{feature learning directly} on point clouds?
+    \end{centering}
+    \pnote{
+        Frage: Können wir Feature Learning \\
+        direkt auf Punktwolken erreichen? \\
+        \par
+        Die Antwort ist ja.
+    }
+\end{frame}
+

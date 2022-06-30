@@ -1,0 +1,94 @@
+\section{Results}
+% \begin{frame}[c]{Results on Object Classification}
+%     \todo{Picture of input/output}
+% \end{frame}
+\begin{frame}[c]{Results on Object Classification}
+    \begin{columns}
+        \centering
+        \column{0.7\textwidth}
+        \input{figures/modelnet40.tex}
+    \end{columns}
+    \pnote{In Klassifikation wurde SOTA erreicht.}
+\end{frame}
+
+
+\begin{frame}[c]{Visualization of Object Part Segmentation}
+    \begin{columns}
+        \column{0.1\textwidth}
+        \column{0.7\textwidth}
+        \includegraphics[height=0.75\textheight]{p46_55}
+        \column{0.2\textwidth}
+        \color{ocre}{Figure from \cite{qi2017pointnet}.}
+    \end{columns}
+    \pnote{Andere Aufgabe: Segmentieren von (partiellen) Eingaben}
+\end{frame}
+
+
+\begin{frame}[c]{Results on Object Part Segmentation}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{shapenet}
+        \caption{
+            \textbf{Segmentation results on ShapeNet part dataset.} The metric
+            used is mIoU(\%) on points. Figure/Table from \cite{qi2017pointnet}.}
+    \end{figure}
+    \pnote{
+        Hier wurde eine neue SOTA gesetzt
+    }
+\end{frame}
+
+\begin{frame}[c]{Semantic Scene Parsing}
+    % \input{figures/semantic.tex}
+    \Large
+    \begin{columns}
+        \column{0.15\textwidth}
+        \begin{itemize}
+            \item Input
+                \vspace{3em}
+            \item Output
+        \end{itemize}
+        \column{0.2\textwidth}
+        \includegraphics[width=\textwidth]{p48_59} \\
+        \includegraphics[width=\textwidth]{p48_60}
+        \column{0.22\textwidth}
+        \includegraphics[width=\textwidth]{p48_58} \\
+        \includegraphics[width=\textwidth]{p48_57}
+        \column{0.2\textwidth}
+        \includegraphics[width=\textwidth]{p48_61} \\
+        \includegraphics[width=\textwidth]{p48_62}
+    \end{columns}
+    \blfootnote{Figures from \cite{qi2017pointnet}.}
+\end{frame}
+
+
+\begin{frame}[c]{Robustness to Data Corruption}
+    % \input{figures/robustness.tex}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{p51_65}
+        \caption{
+            \textbf{Robustness tests.}
+            Accuracy measured on ModelNet40.
+            Figure from \cite{qi2017pointnet}.
+        }
+    \end{figure}
+    \pnote{
+        Sehr Robust gegenüber dem: \\
+        - Löschen von einzelnen Punkten \\
+        - hinzufügen von Ausreißern \\
+        - hinzufügen von extremen Rauschen \\
+        \par
+        Also allgemeinen störungen in Daten. \\
+        Next: Anschauen woran das liegt.
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Robustness in comparison}
+    \Large
+    \begin{columns}
+        \column{0.5\textwidth}
+        \includegraphics[height=0.7\textheight]{robustness_comp}
+        \column{0.3\textwidth}
+        Q: Why is PointNet so robust to missing data?
+    \end{columns}
+    \blfootnote{\textbf{Robustness in comparison with 3D CNN.} Figure from CVPR presentation to \cite{qi2017pointnet}.}
+\end{frame}

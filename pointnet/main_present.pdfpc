@@ -1,0 +1,187 @@
+[notes]
+### 1
+Es entstehen viele Anwendungen die Wahrnehmung
+oder Interaktion in 3D benötigen.
+
+- viele Anwendungen im 3D bereich entstehen
+- brauchen Wahrnehmung oder Interaktion in 3D
+- um diese zu bedienen: hoher bedarf
+- spezifisch auf 3D zugeschnitten
+- Erster: PointNet
+
+### 3
+Auszug an Beispielen
+### 4
+- Am nächsten zu ursprünglichen Tiefendaten
+- Kanonische Form: andere lassen sich einfach umwandeln
+Allerdings: wenig Arbeit zu Point Cloud Features
+### 5
+Die meisten zuvor existierenden Features sind
+nur für bestimmte Aufgaben.
+Skaliert sehr schlecht für neue Aufgaben.
+
+Die Tabelle listet ein paar davon.
+### 6
+Es gibt bereits Arbeiten auf Point Cloud.
+
+
+Allerdings wandeln diese Punktwolken erst
+in andere Darstellungen um, und verwenden
+anschließend bereits existierende Architekturen.
+### 7
+Frage: Können wir Feature Learning
+direkt auf Punktwolken erreichen?
+
+
+Die Antwort ist ja.
+### 8
+Ergebnis davon: PointNet, einheitliche
+architektur für verschiedene Aufgaben
+
+Ende-zu-Ende lernen für Punktwolken
+Vereinheitlichen von zuvor spezialisierten Aufgaben
+### 9
+Herausforderung: Umgang mit Punktwolken. Muss:
+- Unsortierte Mengen als eingabe
+- Keine Kanonische Höherdimensionale Sortierung
+- Invarianz über Geometrische Transformationen
+### 9
+Herausforderung: Umgang mit Punktwolken. Muss:
+- Unsortierte Mengen als eingabe
+- Keine Kanonische Höherdimensionale Sortierung
+- Invarianz über Geometrische Transformationen
+### 10
+Erste Herausforderung:
+- umgehen mit beliebigen Eingabe-permutation
+- wir verwenden Vektoren um Eingaben darzustellen
+- können auch weitere Dimensionen haben
+- keine stabile Sortierung der Punkte möglich
+- !tricks: neu Messen, anderes Datenset, anderer Sensor
+- Mathematisch: tricksen nicht Möglich
+### 11
+Mathematisch: neuronales Netz nur eine Funktion
+Funktional betrachtet: Symmetriedarstellung über fkt
+
+
+Symmetrisch, wenn Funktionswert bei Argumentenvertausch
+gleich bleibt.
+
+Es gibt viele Symmetrische Funktionen. Beispiele
+
+Frage wird: Wie können eine Symmetrische Funktion in
+Architektur von Neuronalem Netz integrieren?
+### 11
+Mathematisch: neuronales Netz nur eine Funktion
+Funktional betrachtet: Symmetriedarstellung über fkt
+
+
+Symmetrisch, wenn Funktionswert bei Argumentenvertausch
+gleich bleibt.
+
+Es gibt viele Symmetrische Funktionen. Beispiele
+
+Frage wird: Wie können eine Symmetrische Funktion in
+Architektur von Neuronalem Netz integrieren?
+### 12
+Erinnerung: Konkatenation von Funktionen kann andere
+Funktionen approximieren/darstellen.
+
+Konkret können wir mit der konkatenation y o g o h
+beliebige symmetrische Funktionen darstellen.
+### 12
+Erinnerung: Konkatenation von Funktionen kann andere
+Funktionen approximieren/darstellen.
+
+Konkret können wir mit der konkatenation y o g o h
+beliebige symmetrische Funktionen darstellen.
+### 13
+Bekannt: NN sind allgemeine funktionsapproximatoren
+Damit ziemlich trivial: PointNet auch für Permutationen
+
+Natürlich braucht eine höhere Genauigkeit mehr Parameter
+
+Hausdorff: Topologischer Raum mit disjunkten Nachbarschaften
+### 13
+Bekannt: NN sind allgemeine funktionsapproximatoren
+Damit ziemlich trivial: PointNet auch für Permutationen
+
+Natürlich braucht eine höhere Genauigkeit mehr Parameter
+
+Hausdorff: Topologischer Raum mit disjunkten Nachbarschaften
+### 14
+MLP: Dense, Fully-Connected with ReLU
+### 15
+Klassifikation soll unverändert sein über:
+- Translation / Bewegung im Raum
+- Rotation
+- Skalierung
+Reflektion sollte bereits über Datensatz enthalten sein
+### 16
+PointNet: symmetrisch allgemeiner Funktionsapproximator
+
+Verwendung, um datenabhängige Transformationsmatrix
+(Normalisierung auf Kanonischen 1-Cube) zu generieren.
+### 16
+PointNet: symmetrisch allgemeiner Funktionsapproximator
+
+Verwendung, um datenabhängige Transformationsmatrix
+(Normalisierung auf Kanonischen 1-Cube) zu generieren.
+### 16
+PointNet: symmetrisch allgemeiner Funktionsapproximator
+
+Verwendung, um datenabhängige Transformationsmatrix
+(Normalisierung auf Kanonischen 1-Cube) zu generieren.
+### 17
+Wir wollen auch mehr als nur die Eingabe Normalisieren
+Konkret: Lokaler Feature Vektor größe 64
+### 17
+Wir wollen auch mehr als nur die Eingabe Normalisieren
+Konkret: Lokaler Feature Vektor größe 64
+### 18
+Schritte einzeln Erklären
+### 19
+Zusammenführen von lokaler einbettung und globalen
+Featurevektor und anschließendes weiterverarbeiten
+
+Ergebnis: matrix mit Segmentationswerten
+### 20
+In Klassifikation wurde SOTA erreicht.
+### 21
+Andere Aufgabe: Segmentieren von (partiellen) Eingaben
+### 22
+Hier wurde eine neue SOTA gesetzt
+### 23
+Sehr Robust gegenüber dem:
+- Löschen von einzelnen Punkten
+- hinzufügen von Ausreißern
+- hinzufügen von extremen Rauschen
+
+
+Also allgemeinen störungen in Daten.
+Next: Anschauen woran das liegt.
+### 24
+Welche Punkte beeinflussen den Global Feature vektor?
+Welche kann man hinzufügen, ohne?
+### 25
+kritischen Punkte bilden ungefähr ursprüngliche Form
+Obere Schranke füllt zwischenräume
+### 26
+OOS = Out Of Specification
+Also nicht im Trainingsdatensatz enthaltene.
+Hier gehen teilweise dinge kaputt
+### 27
+Visualisieren, was einzelne globale Features aktiviert
+### 28
+15 zufällig ausgewählte Features (der 1024)
+Man sieht, wie erwartet: räumliche Abdeckung
+### 29
+Auswirkungen von PointNet erstmal nicht wenig
+Anfang schreiben: ~7300
+Immernoch höchst relevant
+### 29
+Auswirkungen von PointNet erstmal nicht wenig
+Anfang schreiben: ~7300
+Immernoch höchst relevant
+### 30
+Was auch passiert ist, ist dass es als modul / layer
+verwendet wird

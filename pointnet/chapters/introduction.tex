@@ -1,0 +1,116 @@
+\section{Introduction}
+
+
+\begin{frame}[c]{Key Contributions}
+The key contributions of the PointNet paper are as follows:
+    \begin{itemize}
+        \item Design of a novel deep net architecture suitable for unordered point sets in 3D;
+        \item Showing how such a net can be trained to perform 3D shape classification, shape part segmentation and scene semantic parsing tasks;
+        \item Thorough empirical and theoretical analysis on stability and efficiency of the method;
+        % \item Illustration of the 3D features computed by the selected neurons;
+        \item Developing intuitive explanations for its performance.
+    \end{itemize}
+\end{frame}
+
+\subsection{Related Work}
+% \subsubsection{Point Cloud Features}
+% Ignore
+\subsubsection{Deep Learning on 3D Data}
+
+\begin{frame}[c]{Deep Learning on 3D Data}
+    Volumetric CNNs \cite{wu20153d, maturana2015voxnet, qi2016volumetric} apply
+conventional 3d convolutional neural networks on voxelized shapes. However,
+data sparsity and computation cost of 3d convolution constrain the resolution
+of volumetric representation.
+\end{frame}
+
+        % Work has been done to mitigate the sparsity problem, but its still challenging for them to process very large point clouds.
+
+
+\begin{frame}[c]{Multiview-CNNs}
+
+Multiview-CNNs \cite{su2015multi, qi2016volumetric} first render 3D point cloud
+in multiple 2D images and apply 2D conv nets for image classification. Given
+sufficient computational resources, they achieve dominating performance due to
+well-engineered image CNNs. However, it is difficult to extend
+image-CNNs to other 3D or point-based tasks.
+
+\end{frame}
+
+
+\begin{frame}[c]{Feature-based DNNs}
+
+    % \item Spectrial CNNs: spectral CNN on meshes, constrained on manifold meshes and unclear how to extend.
+Feature-based DNNs \cite{fang20153d, guo20153d} extract traditional shape
+features and convert 3d data to a vector before using a fully connected net for
+shape classification. They appear to be limited by the representative power of
+the features extracted.
+
+\end{frame}
+
+\subsubsection{Deep Learning on Unordered Sets}
+
+\begin{frame}[c]{Deep Learning on Unordered Sets}
+A point cloud is an unordered set of vectors from the data structure point of
+view. Most works in deep learning however look at regular input structures like
+ordered sequences of images, volumes or points. Unordered point clouds are
+rarely considered. One recent work \cite{vinyals2015order} attempts to impose
+order on unordered input sets via the attention mechanism. This work focuses on
+generic sets and NLP applications, which lacks the characteristics of geometry
+in the sets.
+
+\end{frame}
+
+% NOT: spatial transformer nets (T-Nets) related to Transformers \cite{vaswani2017attention}
+
+\subsubsection{Based on PointNet}
+
+\begin{frame}[c]{Based on PointNet}
+
+There exist a number of works explaining, applying and building upon PointNet.
+The influence of PointNet can furthermore be seen in the ecosystem of different
+implementations and tools for visualization \cite{charlesq342022Jun,
+aldipiroli2022Jun, yunxiaoshi2022Jun, Pytorch_Pointnet_Pointnet2}. Different
+attempts to explain what PointNet learned \cite{zhang2019explaining,
+huang2019claim} exist, and many apply PointNet to different domains and
+different problems \cite{thiery2022medical, gutierrez2018deep,
+triess2021survey, liang2019multi, zhang2018collaborative, mrowca2018flexible}.
+\end{frame}
+
+% as well as blog posts on Medium \cite{DataScienceUB2022Apr, Rigoulet2022Apr, Gonzales2021Dec},
+
+\subsubsection{Derivations of PointNet}
+
+\begin{frame}[c]{Derivations of PointNet}
+
+PointNet, in addition to being successful itself, sees successful use as a
+module similar to a convolution layer in more sophisticated neural network
+architectures.
+% "PointNet is becoming a module similar to a convolution layer and is used directly as the base of many netwoks" according to \cite{zhang2019explaining}.
+% "Among them, PointNet is becoming a module similar to a convolution layer and is used directly as the base of many netwoks."
+This can best be seen in recent architectures such as PointNet++
+\cite{qi2017pointnet++}, VoxNet \cite{maturana2015voxnet}, and Syncspeccnn
+\cite{yi2017syncspeccnn}. Moreover, an even larger number of architectures is
+being heavily inspired by PointNet or adapts core ideas of the PointNet
+architecture \cite{jiang2018sift, wang2018sgpn, yu2018pu, gutierrez2018deep,
+qi2018frustum, li2018pointcnn}. This includes architectures both for 3D point
+cloud data and traditionally ordered input data structures.
+
+\end{frame}
+
+
+
+\subsection{Problem Statement}
+
+
+\section{Deep Learning on Point Sets}
+
+\subsection{Properties of Point Sets in Rn}
+
+\subsection{PointNet Architecture}
+
+\subsection{Theoretical Analysis}
+
+\begin{frame}[c]{DL on Point Sets}
+
+\end{frame}
