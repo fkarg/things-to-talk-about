@@ -1,0 +1,86 @@
+\section{Code Examples}
+
+\begin{frame}[c,fragile]{DynamicBitVector}
+    \begin{columns}
+        \column{0.4\textwidth}
+    \begin{verbatim}
+    +-----------------+
+    |DynamicBitVector |
+    +-----------------+
+    |root: usize      |
+    |nodes: Vec<Node> |
+    |leafs: Vec<Leaf> |
+    +-----------------+
+    \end{verbatim}
+    \column{0.6\textwidth}
+    \inputminted[linenos=true]{rust}{code/dbv.rs}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Node}
+    \begin{columns}
+        \column{0.4\textwidth}
+    \begin{verbatim}
+    +---------------------+
+    |Node                 |
+    +---------------------+
+    |parent: Option<usize>|
+    |left: Option<isize>  |
+    |right: Option<isize> |
+    |nums: usize          |
+    |ones: usize          |
+    |rank: i8             |
+    +---------------------+
+    \end{verbatim}
+    \column{0.6\textwidth}
+    \inputminted[linenos=true,fontsize=\small]{rust}{code/node.rs}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}[c,fragile]{Leaf}
+    \begin{columns}
+        \column{0.4\textwidth}
+    \begin{verbatim}
+        +-------------+
+        |Leaf         |
+        +-------------+
+        |parent: usize|
+        |value: u128  |
+        |nums: u8     |
+        +-------------+
+    \end{verbatim}
+        \column{0.6\textwidth}
+    \inputminted[linenos=true]{rust}{code/leaf.rs}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}[c]{Implementation of rank and select for u64}
+    \inputminted[linenos=true,fontsize=\small]{rust}{code/u64.rs}
+    (I also have respective non-architecture-specific fallbacks for both)
+\end{frame}
+
+
+\begin{frame}[c]{Index for DynamicBitVector}
+    \large
+    I have \textbf{two} implementations for indexing!
+    \inputminted[linenos=true]{rust}{code/indexing.rs}
+    \vspace{2em}
+    This way, I can do type-safe indexing:
+    \begin{itemize}
+        \item \mint{rust}|self[+3 as usize] -> Node|
+        \item \mint{rust}|self[+3 as isize] -> Leaf|
+        \item \mint{rust}|self[-3 as isize] -> Leaf|
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Unified Traversal: Apply} 
+    \inputminted[linenos=true,fontsize=\footnotesize]{rust}{code/apply.rs}
+\end{frame}
+
+\begin{frame}[c]{Beispielimplementation: flip}
+    \inputminted[linenos=true]{rust}{code/flip.rs}
+\end{frame}

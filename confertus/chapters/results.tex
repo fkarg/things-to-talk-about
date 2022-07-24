@@ -1,0 +1,28 @@
+\section{Results}
+
+
+\begin{frame}[c]{Time invested}
+    \centering
+    \includegraphics[height=0.7\textheight,trim=280 410 0 180,clip]{toggl} \\
+    \color{gray} Does not include time needed to create this presentation
+\end{frame}
+
+\begin{frame}[c,fragile]{Results}
+    \large
+    Unfortunately, I didn't fully get it to run until the end. \\
+    \normalsize
+    \begin{Verbatim}[commandchars=\\\{\}]
+$ RUSTFLAGS="-C target-cpu=native" cargo run --release bv input/example_bv_10k.txt out.txt
+   \textcolor{green}{Compiling} confertus v0.1.0 (/home/pars/Coding/confertus)
+    \textcolor{green}{Finished} release [optimized] target(s) in 4.11s
+     \textcolor{green}{Running} `target/release/confertus bv input/example_bv_10k.txt out.txt`
+index 7 out of bounds for 5
+\textcolor{red}{Error}: "Leaf.insert: Index out of bounds `index > self.nums`"
+    \end{Verbatim}
+    \large
+    \vspace{1em}
+    Turns out, it doesn't uphold all invariances regarding \verb!nums! and
+    \verb!ones!, causing them to drift -- which eventually causes frustrating
+    errors like this.
+
+\end{frame}

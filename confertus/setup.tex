@@ -1,0 +1,100 @@
+% \usepackage{etex}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{multicol}
+% \usepackage{natbib}
+% \usepackage[colorlinks]{hyperref}
+% hyperref={colorlinks
+\usepackage{bibentry}
+\usepackage{subcaption}
+% either subcaption or subfig only
+% \usepackage{subfig}
+% \usepackage{pdfpcnotes}
+% \usepackage{pdfpages}
+% \usepackage[dvipsnames]{xcolor}
+\usepackage{pdfpcnotes}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+
+\usepackage{xcolor}
+\definecolor{ocre}{RGB}{110, 110, 110}
+\usepackage{caption}
+\usepackage[font={small,color=ocre},labelformat=empty]{caption}
+
+\DeclareCaptionFont{black}{\color{black}}
+\DeclareUnicodeCharacter{0301}{ì}
+
+% \usepackage{minted}
+% \usepackage[outputdir=\detokenize{~/Coding/things-to-talk-about/confertus/out/}]{minted}
+\usepackage[outputdir={\detokenize{out/main_handout}}]{minted}
+% \usepackage{minted}
+\usemintedstyle{pastie}
+
+%% Titelbild
+\titleimage{banner_2020_kit}
+
+%% Gruppenlogo
+% \grouplogo{ISAS_logo}
+\grouplogo{}
+
+% Beginn der Präsentation
+
+\title[confertus]{confertus: a dynamic bitvector implementation in rust}
+%\subtitle{entsprechend den Gestaltungsrichtlinien vom 1. August 2020}
+\author[Felix Karg]{Felix Karg}
+% \supervisor{Florian Kurpicz}
+
+\date[25.\,07.\,2022]{25. Juli 2022}
+
+% Literatur
+
+% citestyle
+% - numbers: ieee, nature (science)
+% \usepackage[citestyle=authoryear-comp,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+\usepackage[citestyle=alphabetic,bibstyle=numeric,hyperref,backend=biber]{biblatex}
+
+\bibliography{references}
+\addbibresource{references.bib}
+% \addbibresource{../report/references.bib}
+\bibhang1em
+
+
+% Commands :)
+
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{\color{ocre}#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+\newcommand\todo[1]{{\color{red}\textbf{TODO: #1}}}
+
+
+% declare used unicode-characters from asciiflow
+% \DeclareUnicodeCharacter{250C}{┌} % ┌ (U+250C)
+
+
+\begin{document}
+
+
+% re-enable for more final versions
+% Titelseite
+\KITtitleframe
+% \addtocounter{framenumber}{1}
+
+%Inhaltsverzeichnis
+% \begin{frame}{Inhaltsverzeichnis}
+%     % \begin{multicols}{2}
+%     \tableofcontents
+%     % \end{multicols}
+% \end{frame}
+
+% \begin{frame}[c]{Agenda}
+%     \hfill
+%     \parbox[t]{.95\textwidth}{
+%         \begin{minipage}[c][0.65\textheight]{\textwidth}
+%             \tableofcontents
+%         \end{minipage}
+%         }
+% \end{frame}
