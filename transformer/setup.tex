@@ -7,8 +7,8 @@
 % \usepackage[dvipsnames]{xcolor}
 
 
-% \usepackage{minted}
-% \usemintedstyle{pastie}
+\usepackage[outputdir={\detokenize{out/main_handout}}]{minted}
+\usemintedstyle{pastie}
 
 
 \usetheme[numbering=counter, progressbar=frametitle, subsectionpage=progressbar]{metropolis}
@@ -40,6 +40,7 @@
 % \addtobeamertemplate{bibliography item}{\def \bibitemnum {\insertbiblabel}}{}
 % \addtobeamertemplate{bibliography entry author}{\insertbiblabel}{}
 % \setbeamerfont{bibliography item}{size=\normalsize}
+\setbeamercovered{dynamic}
 
 % \AtBeginSection[]
 % {

@@ -1,4 +1,4 @@
-\section{Background}
+\section{Background and Basic Tricks}
 \subsection{Multi-Layer Perceptron}
 \begin{frame}[c]{Multi-Layer Perceptron}
     \includegraphics[height=0.85\textheight]{dense_1} \\
@@ -16,13 +16,20 @@
     $swish(x) := x * sigmoid(x)$ \\
     Image Source: \cite{chen_deep_2021} \hspace{1cm}
     SwiGLU introduced by \cite{shazeer_glu_2020}
+    \pnote{
+        GLU = Gated Linear Unit, sigmoid is one too \\
+        basically vectorization of activation function
+    }
 \end{frame}
 
-\subsection{Dropout}
+\subsection{Missing Connections}
 \begin{frame}[c]{Dropout I}
     \large
-    \textbf{Problem: } neural network training results in highly specialized feature adaptations \\
-    "Complex co-adaptations can be trained to work well on a training set, but on novel test data they are far more likely to fail than multiple simpler co-adaptations that achieve the same thing." \cite{srivastava_dropout_2014}
+    \textbf{Problem:} neural network training results in highly specialized feature adaptations (overfitting) \\
+    \includegraphics[width=\textwidth]{overfitting} \\
+    \normalsize
+    Image Source: \cite{lever_points_2016}
+    % "Complex co-adaptations can be trained to work well on a training set, but on novel test data they are far more likely to fail than multiple simpler co-adaptations that achieve the same thing." \cite{srivastava_dropout_2014}
 \end{frame}
 
 \begin{frame}[c]{Dropout II}
@@ -34,17 +41,20 @@
         \\
         Effectively results in an ensamble of different \\
         networks, averaging the output during testing. \\
-        Powerful method for regularization
+        Powerful method for regularization \\
+        \\
+        Well-known mechanism for Random Forests
     }
 \end{frame}
 
 
-\subsection{Residual Connections}
+\subsection{Going Deeper}
 \begin{frame}[c]{Residual Connections}
-    \includegraphics[width=0.8\textwidth]{resnet} \\
+    \includegraphics[width=\textwidth]{resnet} \\
     Image Source: \cite{he_deep_2016}
-\end{frame}
-
-\begin{frame}[c]{Regularized Residual Connections}
-    Self-Regulated Network \cite{xu_regnet_2021}
+    % \large
+    % \newline
+    % \newline
+    % \pause
+    % \textbf{Also:} Feature Pyramid Networks \cite{lin_feature_2017} in CV
 \end{frame}
