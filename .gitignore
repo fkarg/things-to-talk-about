@@ -185,3 +185,6 @@ out
 out.pdf
 *.compressed.pdf
 *.pdfpc~
+
+# Python virtual env
+.venv
