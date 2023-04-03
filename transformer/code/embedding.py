@@ -4,3 +4,6 @@
 
 >>> encoder.decode(ids)
 "Not all heroes wear capes."
+
+>>> [encoder.decode([i]) for i in ids]
+['Not', ' all', ' heroes', ' wear', ' cap', 'es', '.']

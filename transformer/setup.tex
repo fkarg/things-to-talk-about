@@ -64,6 +64,18 @@
 % }
 % sadly, this does not at all compile and throws weird errors
 
+% from: https://tex.stackexchange.com/questions/365231/enclose-a-custom-quote-environment-in-quotes-from-csquotes
+\usepackage[style=british]{csquotes}
+
+\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip1em
+  \hbox{}\nobreak\hfill #1%
+  \parfillskip=0pt \finalhyphendemerits=0 \endgraf}}
+
+\newsavebox\mybox
+\newenvironment{aquote}[1]
+  {\savebox\mybox{#1}\begin{quote}\openautoquote\hspace*{-.7ex}}
+  {\unskip\closeautoquote\vspace*{1mm}\signed{\usebox\mybox}\end{quote}}
+
 
 \iftwocols
 \AtBeginSection[]
