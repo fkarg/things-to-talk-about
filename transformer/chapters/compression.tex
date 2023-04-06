@@ -4,7 +4,7 @@
     \includegraphics[height=0.8\textheight]{quantization} \\
     Image Source: \cite{seo_efficient_2019}
     \large
-    SOTA: GPTQ \cite{frantar_gptq_2022}
+    Current SOTA is GPTQ \cite{frantar_gptq_2022}
     \pnote{
         quantization effectively reduces the resolutionof individual weights,
         and can be done while losing very little accuracy
@@ -16,26 +16,62 @@
     \includegraphics[width=\textwidth]{distillation} \\
     Image Source: \cite{gou_knowledge_2021}
 \end{frame}
+
 \begin{frame}[c]{Patient Knowledge Distillation}
-    \includegraphics[height=0.8\textheight]{pkd} \\
-    Image Source: \cite{sun_patient_2019}
+    \begin{columns}
+        \column{0.6\textwidth}
+        \begin{minipage}[c][\textheight][c]{\linewidth}
+            \includegraphics[height=0.8\textheight]{pkd} \\
+            Image Source: \cite{sun_patient_2019}
+        \end{minipage}
+        \large
+        \column{0.4\textwidth}
+        \begin{minipage}[c][\textheight][c]{\linewidth}
+            Distillation compression is often 2-80x with inference
+            speedups of 1.5-10x while keeping $1-\epsilon$ accuracy (often
+            97\%)
+        \end{minipage}
+    \end{columns}
+    \pnote{
+        Has also been successfully used for various other networks,
+        not just transformer
+    }
 \end{frame}
 
 \subsection{Rank Reduction}
-\begin{frame}[c]
-    LoRA \cite{hu_lora_2021}
-    (spun up for LlaMa just a month after 'release')
-    \todo{use graphics from LoRA?}
+\begin{frame}[c]{LoRA: Low-Rank Adaptation}
+    \begin{columns}
+        \column{0.4\textwidth}
+        \begin{minipage}[c][\textheight][c]{\linewidth}
+            \includegraphics[width=\textwidth]{lora1} \\
+            Image Source: \cite{hu_lora_2021}
+        \end{minipage}
+        \column{0.6\textwidth}
+        \begin{minipage}[c][.8\textheight][c]{\linewidth}
+            \large
+            \begin{aquote}{LoRA \cite{hu_lora_2021}}
+                LoRA can reduce the number of trainable parameters by 10,000
+                times and the GPU memory requirement by 3 times ... despite
+                having ... no additional inference latency.
+            \end{aquote}
+        \end{minipage}
+    \end{columns}
+    \pnote{
+        Has also been successfully used for other architectures
+    }
 \end{frame}
 
-\subsection{Memorizing Transformer}
-\begin{frame}[c]
-    Memorizing \cite{wu_memorizing_2022}
-    \todo{use loss curves?}
-\end{frame}
-
-\subsection{Reflexion}
-\begin{frame}[c]{Reflexion}
-    Reflexion \cite{rombach_highresolution_2022}
-    \todo{use loss curves and architecture}
+\begin{frame}[c]{Honorable Mentions}
+    \begin{itemize}[<+(1)->]
+        \item Transformer-XL \cite{dai_transformerxl_2019}: Attentive Language Models beyond a Fixed-Length Context
+        \item Compressive Transformer \cite{rae_compressive_2019}: Long-Range Sequence Modelling by Compressing Past Memories
+        \item Memorizing Transformer \cite{wu_memorizing_2022}: kNN-augmented attention layer, can reduce parameter count 5x while keeping perplexity
+        \item Adaptive Attention Span \cite{sukhbaatar_adaptive_2019}: varying attention distances
+        \item Reflexion \cite{shinn_reflexion_2023}: Asking the model if the answer is correct
+    \end{itemize}
+    \pnote{
+        Transformer-XL: requires different positional encoding for previous segments \\
+        Compressive: 'summarizing' previous segments \\
+        Memorizing: on a layer near the top, using xl-based FIFO compression
+    }
 \end{frame}

@@ -1,7 +1,9 @@
 \section{Embedding}
 \subsection{Overview}
 \begin{frame}[c]{We are here}
-    \includegraphics[height=0.9\textheight]{Transformer_initial_embeddings}
+    % trim=l b r t
+    \includegraphics[height=0.9\textheight,clip,trim=120 0 120 0]{Transformer_initial_embeddings}
+    Image Adapted from \cite{vaswani_attention_2017}
 \end{frame}
 
 \begin{frame}[c]{Definitions}
@@ -23,7 +25,9 @@
     \large
     Exemplary token to embedding encoding in GPT2.
     \normalsize
+    \textcolor[gray]{0.6}{
     Image Source: \cite{alammar_illustrated_2019}
+}
 \end{frame}
 
 \begin{frame}[c]{In Code}
@@ -37,7 +41,9 @@
     \large
     Exemplary positional encoding in GPT2. \\
     \normalsize
+    \textcolor[gray]{0.6}{
     Image Source: \cite{alammar_illustrated_2019}
+}
 \end{frame}
 
 \begin{frame}[c]{Positional Encoding II}
@@ -65,7 +71,11 @@
     % trim=left bottom right top, clip
     \includegraphics[width=\textwidth,trim=0 0 0 700,clip]{Transformer_initial_embeddings}
     \large
-    Simple Addition. Works well due to sparse high dimensional spaces.
+    Simple Addition. Works well due to sparse high dimensional spaces. \\
+    \normalsize
+    \textcolor[gray]{0.6}{
+        Image Adapted from \cite{vaswani_attention_2017}
+    }
 \end{frame}
 
 

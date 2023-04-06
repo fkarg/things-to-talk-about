@@ -1,26 +1,29 @@
 \section{Overview}
 
-\begin{frame}[standout]
-    \Large
-    Ask if you have questions \\
-    (or want me to explain in more detail)
-\end{frame}
-
-\begin{frame}[c]{Plan}
-    Individual Parts:
+\begin{frame}[c]{Learning Goals} 
+    \large
     \begin{itemize}[<+(1)->]
-        \item Normal FeedForward MLP
-        \item Embedding: Input
-        \item Embedding: Location
-        \item Basics of Attention (before transformer)
-        \item Attention is All You Need \cite{vaswani_attention_2017}
-        \item Linear Attention: FastFormer \cite{wu_fastformer_2021} / Flash Attention \cite{hua_transformer_2022}
-
-        \item (fun:) One Model to Learn Them All \cite{kaiser_one_2017}
-        \item Distillation / Quantization \cite{polino_model_2018}
+        \item Gain familiarity with the transformer architecture and understand how it works
+        \item Understand Tokens and Embeddings
+        \item Comprehend how Attention works
+        \item Become aware of common compression techniques
+        \item Recognize limitations
     \end{itemize}
+    \pause
+    \textbf{Key Takeaway:} Transformers can be powerful, it might be worth
+    trying to use them.
 \end{frame}
 
+\addtocounter{framenumber}{1}
+\begin{frame}[standout]
+    \huge
+    Ask if you have questions \\
+    or anything is unclear
+    \pnote{
+        I will be jumping around different topics a bunch \\
+        Ask immediately if anything is unclear
+    }
+\end{frame}
 
 \begin{frame}[c]{Overview}
     \begin{figure}

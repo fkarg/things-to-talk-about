@@ -1,3 +1,57 @@
 [notes]
-### 7
- Classic Dense FF \\ Using ReLU activation 
+### 5
+I will be jumping around different topics a bunch
+Ask immediately if anything is unclear
+### 9
+Classic Dense FF
+has some arbitrary nonlinear activation function
+### 11
+GLU = Gated Linear Unit, sigmoid is one too
+basically vectorization of activation function
+### 14
+Dropout arbitrarily removes neurons during training
+=> no reliance on individual features
+
+Effectively results in an ensamble of different
+networks, averaging the output during testing.
+Powerful method for regularization
+
+Well-known mechanism for Random Forests
+### 27
+Used for newer models, e.g. LLaMa
+### 33
+Attention existed before the transformer
+architecture, but was used in combination
+with recurrent neural networks.
+
+As seen here, it focuses on what is learned relevant
+### 34
+d_k is query-size dimension
+### 37
+As I understand it, MHA is for splitting the embedding space in different partitions, ensuring that each part get's at least a certain amount of 'activation'. This can increase performance considerably, but effectively it doesn't do anything different. Effectively black magic, but seems to work.
+### 42
+followed by topk selection
+### 44
+Temperature is non-linear rescaling of values, increasing chance of lower-likelihood predictions to be chosen.
+### 46
+Dimensions represent my current understanding, reality might differ
+### 52
+they clearly showed that it could be interpreted as physical system with particles (tokens) interacting. For that, the solver could be improved.
+However, while they did improve results, they only did so marginally. I assume they didn't use it fully, more experiments necessary.
+### 56
+Even the original GPT didn't use 'full' transformers, but Sparse Transformer
+Runtime: O(n sqrt n) instead of O( n * n )
+### 61
+quantization effectively reduces the resolutionof individual weights, and can be done while losing very little accuracy
+### 64
+Has also been successfully used for various other networks, not just transformer
+### 66
+Has also been successfully used for other architectures
+### 67
+Transformer-XL: requires different positional encoding for previous segments
+Compressive: 'summarizing' previous segments
+Memorizing: on a layer near the top, using xl-based FIFO compression
+### 74
+we now have an shared embedding between text and images
+### 80
+Speed up simulation by 150x

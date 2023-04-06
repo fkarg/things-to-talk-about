@@ -26,8 +26,8 @@
 
 \subsection{Dimensions}
 \begin{frame}[c]{Dimensions}
-    \includegraphics[height=\textheight]{gpt2_decoder_dims}
-    Image Adapted from: \cite{gpt_2023}
+    \includegraphics[height=0.9\textheight]{gpt2_decoder_dims}
+    Image Adapted from: \cite{mody_gpt_2023}
     \pnote{
         Dimensions represent my current understanding, reality might differ
     }
@@ -69,15 +69,17 @@
     \large
     For solving, use a Strang-Marchuk Splitting scheme instead of Lie-Trotter \\
     \normalsize
-    Image Source: \cite{lu_understanding_2019}
-    For solving method details, see \cite{geiser_decomposition_2009}
-    \pnote{
-        they clearly showed that it could be interpreted as physical system
-        with particles (tokens) interacting. For that, the solver could be
-        improved. \\
-        However, while they did improve results, they only did so marginally.
-        I assume they didn't use it fully, more experiments necessary.
+    \textcolor[gray]{0.6}{
+        Image Source: \cite{lu_understanding_2019}
     }
+    For details on solving methods see \cite{geiser_decomposition_2009}
+        \pnote{
+            they clearly showed that it could be interpreted as physical system
+            with particles (tokens) interacting. For that, the solver could be
+            improved. \\
+            However, while they did improve results, they only did so marginally.
+            I assume they didn't use it fully, more experiments necessary.
+        }
 \end{frame}
 
 
@@ -86,9 +88,21 @@
     \begin{aquote}{Ye et al. 2023, Towards ... \cite{ye_understanding_2023}}
         However, we find only a weak consistency exists between the attention
         weights of features and their importance. We verify the feature map
-        multiplication that brings about high-order non-linearity into CNNs is
-        crucial for the effectiveness of attention mechanism.
+        multiplication that brings about \textbf{high-order non-linearity into CNNs is
+        crucial for the effectiveness} of attention mechanism.
     \end{aquote}
+\end{frame}
+
+
+\begin{frame}[c]{In-Context Optimization}
+    \includegraphics[width=\textwidth]{in-context} \\
+    \textcolor[gray]{0.6}{
+        Image Source: \cite{vonoswald_transformers_2022} 
+    }
+        \begin{aquote}{Transformers Learn In-Context \cite{vonoswald_transformers_2022}}
+            ... training Transformers ... can be closely related to well-known
+            gradient-based meta-learning formulations.
+        \end{aquote}
 \end{frame}
 
 \subsection{Architecture Improvements}
@@ -128,16 +142,3 @@
 % \end{frame}
 
 
-\begin{frame}[c]{Honorable Mentions}
-    \begin{itemize}[<+(1)->]
-        \item Transformer-XL \cite{dai_transformerxl_2019}: Attentive Language Models beyond a Fixed-Length Context
-        \item Compressive Transformer \cite{rae_compressive_2019}: Long-Range Sequence Modelling by Compressing Past Memories
-        \item Memorizing Transformer \cite{wu_memorizing_2022}: kNN-augmented attention layer, can reduce parameter count 5x while keeping perplexity
-        \item Adaptive Attention Span \cite{sukhbaatar_adaptive_2019}: varying attention distances
-    \end{itemize}
-    \pnote{
-        Transformer-XL: requires different positional encoding for previous segments \\
-        Compressive: 'summarizing' previous segments \\
-        Memorizing: on a layer near the top, using xl-based FIFO compression
-    }
-\end{frame}
