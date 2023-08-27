@@ -1,33 +1,45 @@
 \section{Embedding}
 \subsection{Overview}
-\begin{frame}[c]{We are here}
+\begin{frame}[c]{Step I: Embedding}
     % trim=l b r t
     \includegraphics[height=0.9\textheight,clip,trim=120 0 120 0]{Transformer_initial_embeddings}
-    Image Adapted from \cite{vaswani_attention_2017}
+    \raisebox{3em}{\gray{Image Adapted from \cite{vaswani_attention_2017}}}
 \end{frame}
+
 
 \begin{frame}[c]{Definitions}
     \large
     \begin{itemize}[<+(1)->]
+        \item    \textbf{Token:} String of arbitrary length
         \item    \textbf{Vocabulary:} List of tokens available to the tokenizer, that can be recognized and generated \\
-        \item    \textbf{Tokenizer:} Split the input apart using the available tokens in vocabulary \\
+        \item    \textbf{Tokenizer:} Splitting input text apart using available tokens from the vocabulary \\
         \item    \textbf{Embedding:} Internal high-dimensional representation of given set of tokens (learned) \\
         % \item    \textbf{Mapping:} Individual tokens still need a mapping to an embedding (learned) \\
     \end{itemize}
     \pause
     The Vocabulary / Tokens are commonly learned via Byte Pair
     Encoding (BPE) \cite{shibata_byte_1999}. \\
+    \pause
+    \small (SOTA library: sentencepiece \cite{kudo_sentencepiece_2018})
+    \pnote{
+        Tokens usually include the ascii alphabet and other common strings
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Overview of Individual Steps}
+    \includegraphics[width=\textwidth]{tokenizer_embedding} \\
+    \gray{Image Source: \cite{arici_realworld_2023}} \\
+    \large
+    Visualization of Encoding pipeline.
 \end{frame}
 
 \subsection{Input Embedding}
 \begin{frame}[c]{Input Embedding}
     \includegraphics[width=\textwidth]{gpt2-token-embeddings-wte-2} \\
+    \gray{Image Source: \cite{alammar_illustrated_2019}} \\
     \large
     Exemplary token to embedding encoding in GPT2.
-    \normalsize
-    \textcolor[gray]{0.6}{
-    Image Source: \cite{alammar_illustrated_2019}
-}
 \end{frame}
 
 \begin{frame}[c]{In Code}
@@ -38,12 +50,9 @@
 
 \begin{frame}[c]{Positional Encoding}
     \includegraphics[width=\textwidth]{gpt2-positional-encoding} \\
+    \gray{Image Source: \cite{alammar_illustrated_2019}} \\
     \large
-    Exemplary positional encoding in GPT2. \\
-    \normalsize
-    \textcolor[gray]{0.6}{
-    Image Source: \cite{alammar_illustrated_2019}
-}
+    Exemplary positional encoding in GPT2.
 \end{frame}
 
 \begin{frame}[c]{Positional Encoding II}
@@ -53,29 +62,25 @@
     \newline
     \includegraphics[width=\textwidth]{positional_encoding} \\
     \normalsize
-    Image source: Public Domain
+    \gray{Image Source: Public Domain}
 \end{frame}
 
-\begin{frame}[c]{RoPE: Rotary Positional Encoding}
+\begin{frame}[c]{RoPE: Rotary Positional Encoding (SOTA)}
     \includegraphics[width=\textwidth]{rope} \\
-    Image Source: \cite{su_roformer_2022}
+    \gray{Image Source: \cite{su_roformer_2022}}
     \pnote{
-        Used for newer models, e.g. LLaMa
+        Used for newer models, e.g. LLaMa or Falcon
     }
 \end{frame}
-
 
 
 \subsection{Full Input Embedding}
 \begin{frame}[c]{Full Input Embedding}
     % trim=left bottom right top, clip
     \includegraphics[width=\textwidth,trim=0 0 0 700,clip]{Transformer_initial_embeddings}
+    \gray{Image Adapted from \cite{vaswani_attention_2017}} \\
     \large
-    Simple Addition. Works well due to sparse high dimensional spaces. \\
-    \normalsize
-    \textcolor[gray]{0.6}{
-        Image Adapted from \cite{vaswani_attention_2017}
-    }
+    Simple Addition. Works well due to sparse high dimensional spaces.
 \end{frame}
 
 

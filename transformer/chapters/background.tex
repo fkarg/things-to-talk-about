@@ -3,7 +3,7 @@
 \begin{frame}[c]{Multi-Layer Perceptron}
     \includegraphics[height=0.85\textheight]{dense_1} \\
     \normalsize
-    Image Source: Public Domain
+    \gray{Image Source: Public Domain}
     \pnote{
     Classic Dense FF \\
     has some arbitrary nonlinear activation function
@@ -14,7 +14,7 @@
 \begin{frame}[c]{Common Activation Functions}
     \includegraphics[height=0.75\textheight]{sigmoid_swish_relu} \\
     $swish(x) := x * sigmoid(x)$ \\
-    Image Source: \cite{chen_deep_2021} \hspace{1cm}
+    \gray{Image Source: \cite{chen_deep_2021}} \hspace{1cm}
     SwiGLU introduced by \cite{shazeer_glu_2020}
     \pnote{
         GLU = Gated Linear Unit, sigmoid is one too \\
@@ -28,13 +28,19 @@
     \textbf{Problem:} neural network training results in highly specialized feature adaptations (overfitting) \\
     \includegraphics[width=\textwidth]{overfitting} \\
     \normalsize
-    Image Source: \cite{lever_points_2016}
+    \gray{Image Source: \cite{lever_points_2016}}
     % "Complex co-adaptations can be trained to work well on a training set, but on novel test data they are far more likely to fail than multiple simpler co-adaptations that achieve the same thing." \cite{srivastava_dropout_2014}
+    \pnote{
+        benefits: generalization of features across multiple nodes, \\
+        which makes them less pronet to overfitting \\
+        \\
+        For some reason, not used by a lot of modern LLMs
+    }
 \end{frame}
 
 \begin{frame}[c]{Dropout II}
     \includegraphics[width=\textwidth]{dropout} \\
-    Image Source: \cite{srivastava_dropout_2014}
+    \gray{Image Source: \cite{srivastava_dropout_2014}}
     \pnote{
         Dropout arbitrarily removes neurons during training \\
         => no reliance on individual features \\
@@ -51,7 +57,7 @@
 \subsection{Going Deeper}
 \begin{frame}[c]{Residual Connections}
     \includegraphics[width=\textwidth]{resnet} \\
-    Image Source: \cite{he_deep_2016}
+    \gray{Image Source: \cite{he_deep_2016}}
     % \large
     % \newline
     % \newline
