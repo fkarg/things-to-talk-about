@@ -2,20 +2,21 @@
 
 \begin{frame}[c]{Attention in Transformer}
     \includegraphics[height=0.9\textheight,clip,trim=120 0 120 0]{transformer_attention}
-    Image Adapted from \cite{vaswani_attention_2017}
+    \raisebox{3em}{\gray{Image Adapted from \cite{vaswani_attention_2017}}}
 \end{frame}
 
 
 \subsection{Basic Attention}
 
-\begin{frame}[c]{Basic Attention}
+\begin{frame}[c]{Basic Attention: Importance Weighing}
     \includegraphics[height=0.85\textheight]{neural-alignment} \\
-    Image Source: \cite{bahdanau_neural_2016}
+    \gray{Image Source: \cite{bahdanau_neural_2016}}
     \pnote{
         Attention existed before the transformer \\
-        architecture, but was used in combination \\
-        with recurrent neural networks. \\ \\
-        As seen here, it focuses on what is learned relevant
+        architecture, and was used in combination \\
+        with recurrent neural networks (LSTM). \\ \\
+        As seen here, attention learns to highlight \\
+        what is relevant for the current step
     }
 \end{frame}
 
@@ -29,21 +30,22 @@
     $$Q = W_Q\textcolor{blue}{x}, K = W_K\textcolor{red}{y}, V = W_V\textcolor{red}{y}$$
     for encoder-decoder cross-attention
     \pnote{
-        d_k is query-size dimension
+        d_k is query-size dimension \\
+        speculation: probably context length
     }
 \end{frame}
 
 
 \begin{frame}[c]{Scaled Dot-Product Attention}
     \includegraphics[height=0.9\textheight]{scaled_dot_attention}
-    Image Source: \cite{vaswani_attention_2017}
+    \raisebox{3em}{\gray{Image Source: \cite{vaswani_attention_2017}}}
 \end{frame}
 
 
 \subsection{Multi-Head Attention}
 \begin{frame}[c]{Multi-Head Attention}
     \includegraphics[height=0.9\textheight]{multi_head_attention}
-    Image Source: \cite{vaswani_attention_2017}
+    \raisebox{3em}{\gray{Image Source: \cite{vaswani_attention_2017}}}
     \pnote{
         As I understand it, MHA is for splitting the
         embedding space in different partitions, ensuring that each part get's
@@ -57,6 +59,6 @@
 \subsection{Masked Attention}
 \begin{frame}[c]{Masked Attention}
     \includegraphics[width=\textwidth]{masked-self-attention} \\
-    Image Source: \cite{alammar_illustrated_2019}
+    \gray{Image Source: \cite{alammar_illustrated_2019}}
 \end{frame}
 
