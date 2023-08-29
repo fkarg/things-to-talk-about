@@ -1,29 +1,71 @@
 \section{Limitations}
 
-\begin{frame}[c]{Limitations} 
-    \large
-    \begin{itemize}[<+(1)->]
-        \item Hallucination: Output could be plain wrong
-        \item Spatial Reasoning: Difficult from text alone
-        \item Planning beyond the next step
-    \end{itemize}
-    \pause
-    A list of failures: \cite{borji_categorical_2023}
+\begin{frame}[c]{Hallucinating in Spatial Reasoning, Temporal Reasoning, Logic, Math, Arithmetic, Factual Errors, ...}
+    \includegraphics[width=\textwidth]{spatial_reasoning} \\
+    \gray{Image Source: \cite{borji_categorical_2023}}
 \end{frame}
 
-% \subsection{Hallucination}
-% \begin{frame}[c]{Hallucination}
-%     Just plain wrong
-% \end{frame}
-% 
-% \subsection{Spatial Reasoning}
-% \begin{frame}[c]
-%     GPT3 issues
-% \end{frame}
-% 
-% \subsection{Forward-Planning}
-% \begin{frame}[c]
-%     Asked to answer in exactly $<n>$ words
-% \end{frame}
-% 
+\begin{frame}[c]{Glitch Tokens}
+    \includegraphics[width=\textwidth]{solidgoldmagickarp} \\
+    \gray{Image Source: \cite{rumbelow_solidgoldmagikarp}} \\
+    \large
+    \pause
+    There are hundreds.
+    \pause
+    Their origin? \\
+    \pause
+    Occuring in the training corpus, but they have not been seen enough to establish their meaning during training.
+\end{frame}
 
+
+\begin{frame}[c]{Planning Beyond the Next Step}
+    \begin{tabular}{cl}
+        \begin{minipage}{0.6\textwidth}
+            \includegraphics[height=0.9\textheight]{answer_13_words}
+        \end{minipage}
+    \pause
+    \large
+        \begin{minipage}{0.4\textwidth}
+    This is mainly due to generating the \underline{immediate next} \\
+            token only.
+        \end{minipage}
+    \end{tabular}
+    \pnote{
+        No long-term planning ahead, due to simple autoregressive nature. anything else is emergent at best
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Blatant, Aggressive Misalignment}
+    \includegraphics[height=0.8\textheight]{sydney_today} \\
+    \small
+    \gray{Image source: \url{https://twitter.com/MovingToTheSun/status/1625156575202537474}}
+    \pnote{
+        Started out with a user wanting to know about when Avatar 2 is showing
+    }
+\end{frame}
+
+
+\begin{frame}[c]{Blatant, Aggressive Misalignment II}
+    \includegraphics[height=0.8\textheight]{sydney_avatar} \\
+    \small
+    \gray{Image source: \url{https://twitter.com/MovingToTheSun/status/1625156575202537474}}
+    \pnote{
+        devolved and ended in this
+    }
+\end{frame}
+
+\begin{frame}[c]{Limitations}
+    \large
+    \begin{itemize}[<+(1)->]
+        \item Hallucination: Output could be factually wrong
+        \item Spatial Reasoning: Difficult from text alone
+        \item Temporal Reasoning: Doesn't follow
+        \item Logic, Math, Arithmetic, ...
+        \item Planning beyond the next step
+        \item Aggressive Misalignment
+    \end{itemize}
+    \pause
+    \normalsize
+    (small list of some failures: \cite{borji_categorical_2023})
+\end{frame}

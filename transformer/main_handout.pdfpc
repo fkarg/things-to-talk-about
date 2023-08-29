@@ -1,4 +1,7 @@
 [notes]
+### 4
+sequence to sequence also includes everything
+where an intermediate sequence is an embedding
 ### 5
 I will be jumping around different topics a bunch
 Ask immediately if anything is unclear
@@ -8,6 +11,11 @@ has some arbitrary nonlinear activation function
 ### 11
 GLU = Gated Linear Unit, sigmoid is one too
 basically vectorization of activation function
+### 13
+benefits: generalization of features across multiple nodes,
+which makes them less pronet to overfitting
+
+For some reason, not used by a lot of modern LLMs
 ### 14
 Dropout arbitrarily removes neurons during training
 => no reliance on individual features
@@ -17,41 +25,107 @@ networks, averaging the output during testing.
 Powerful method for regularization
 
 Well-known mechanism for Random Forests
-### 27
-Used for newer models, e.g. LLaMa
-### 33
-Attention existed before the transformer
-architecture, but was used in combination
-with recurrent neural networks.
-
-As seen here, it focuses on what is learned relevant
+### 20
+Tokens usually include the ascii alphabet and other common strings
+### 28
+Used for newer models, e.g. LLaMa or Falcon
 ### 34
+Attention existed before the transformer
+architecture, and was used in combination
+with recurrent neural networks (LSTM).
+
+As seen here, attention learns to highlight
+what is relevant for the current step
+### 35
 d_k is query-size dimension
-### 37
+speculation: probably context length
+### 38
 As I understand it, MHA is for splitting the embedding space in different partitions, ensuring that each part get's at least a certain amount of 'activation'. This can increase performance considerably, but effectively it doesn't do anything different. Effectively black magic, but seems to work.
-### 42
-followed by topk selection
 ### 44
-Temperature is non-linear rescaling of values, increasing chance of lower-likelihood predictions to be chosen.
+followed by topk selection
 ### 46
-Dimensions represent my current understanding, reality might differ
-### 52
+Temperature is non-linear rescaling of values, increasing chance of lower-likelihood predictions to be chosen.
+### 48
+Dimensions represent my current understanding
+### 54
 they clearly showed that it could be interpreted as physical system with particles (tokens) interacting. For that, the solver could be improved.
 However, while they did improve results, they only did so marginally. I assume they didn't use it fully, more experiments necessary.
 ### 56
+Not sure if not actually a product of mesa-optimization
+
+information hazard note on mesa optimizers
+### 58
 Even the original GPT didn't use 'full' transformers, but Sparse Transformer
 Runtime: O(n sqrt n) instead of O( n * n )
-### 61
-quantization effectively reduces the resolutionof individual weights, and can be done while losing very little accuracy
-### 64
-Has also been successfully used for various other networks, not just transformer
+
+Obviously a huge benefit if you can get substantially reduced runtime
+for the same performance
+### 59
+From what we know, GPT4 is using a variant of FlashAttention
 ### 66
+quantization effectively reduces the resolutionof individual weights, and can be done while losing very little accuracy
+### 68
+Distillation can train a student model not just on outputs,
+but also intermediate representations, which makes it much
+more effective than 'normal' training
+### 69
+Size compression is particularly relevant for
+execution on less powerful hardware
+
+There are distillation variants where you specify
+the accuracy you want to keep.
+### 71
 Has also been successfully used for other architectures
-### 67
+### 72
 Transformer-XL: requires different positional encoding for previous segments
 Compressive: 'summarizing' previous segments
-Memorizing: on a layer near the top, using xl-based FIFO compression
-### 74
-we now have an shared embedding between text and images
+Memorizing: on a layer near the top, using xl-based FIFO compression, can also use external source for that
+### 75
+BERT is an encoder-only transformer
+### 77
+GPT3 is a question mark, but we pretty much know most about it
+GPT4 is a bigger question, but I have a slide for that too
+### 78
+Only the first two bullet points where directly from george hotz
 ### 80
+we now have an shared embedding between text and images
+
+Specifically we can determine
+how well a description matches an image
+### 84
+And more recently something something model-based RL
+### 86
 Speed up simulation by 150x
+### 94
+No single metric is strictly better or worse
+But they are suited better or worse to certain tasks
+### 101
+reflection improved performance on average from 67\% to 88\%, so by 200 basis points
+### 103
+iteratively using goal-directed reflection
+and all plugins available to split and solve
+more complicated tasks.
+### 105
+Simulated agents managed to coordinate
+going to a party and build relationsships.
+They also had a follow-up paper,
+though I haven't read it in detail
+### 108
+You had to write 'a good list of .... would be:' before that
+### 111
+Technically speaking often Instruct=RLHF but eh
+
+ChatGPT is thus a 'lobotomized',
+less useful version when compared to the original InstructGPT
+### 113
+The model uses the ethics it learned implicitly.
+Not sure if this creates additional problems
+### 117
+No long-term planning ahead, due to simple autoregressive nature. anything else is emergent at best
+### 118
+Started out with a user wanting to know about when Avatar 2 is showing
+### 119
+devolved and ended in this
+### 122
+sequence to sequence also includes everything
+where an intermediate sequence is an embedding

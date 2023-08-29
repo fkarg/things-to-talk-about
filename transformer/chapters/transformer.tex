@@ -2,7 +2,7 @@
 
 \subsection{Output}
 \begin{frame}[c]{Output}
-    \includegraphics[height=0.9\textheight]{transformer_output}
+    \includegraphics[height=0.9\textheight,clip,trim=120 0 120 0]{transformer_output}
     \raisebox{3em}{\gray{Image Adapted from \cite{vaswani_attention_2017}}}
     \pnote{
         followed by topk selection
@@ -147,10 +147,10 @@
     Note that Standard Attention is $O(n^2)$ in compute.
 \end{frame}
 
-% \begin{frame}[c]{Linear-Time Transformer}
-%     FastFormer \cite{wu_fastformer_2021} \\
-%     Transformer Quality in Linear Time \cite{hua_transformer_2022} \\
-%     \todo{linear time transformer}
-% \end{frame}
+\subsection{Modern Transformer Architecture}
 
+\begin{frame}[c]{Transformer with commonly used improvements}
+    \includegraphics[height=0.9\textheight]{modern_transformer}
+    \raisebox{3em}{\gray{Image Source: Self-Creation}}
+\end{frame}
 
